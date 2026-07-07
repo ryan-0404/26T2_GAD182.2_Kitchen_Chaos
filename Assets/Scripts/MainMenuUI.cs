@@ -6,9 +6,5 @@ public class MainMenuUI : MonoBehaviour
     {
         GameManager.Instance.StartNewRun();
     }
-
-    public void QuitGame()
-    {
-        GameManager.Instance.QuitGame();
-    }
 }
+   

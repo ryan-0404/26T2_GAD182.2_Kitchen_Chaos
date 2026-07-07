@@ -12,10 +12,11 @@ public class ResultsUI : MonoBehaviour
     {
         finalScoreText.text = "Final Score: " + GameManager.Instance.totalScore;
 
-        gamesCompletedText.text = "Mini Games Completed: " 
-            + GameManager.Instance.currentMiniGameIndex 
-            + " / " 
-            + GameManager.Instance.miniGameScenes.Length;
+        gamesCompletedText.text =
+            "Mini Games Completed: " +
+            GameManager.Instance.currentMiniGameIndex +
+            " / " +
+            GameManager.Instance.miniGameScenes.Length;
 
         if (GameManager.Instance.lives <= 0)
         {
@@ -32,13 +33,8 @@ public class ResultsUI : MonoBehaviour
         GameManager.Instance.StartNewRun();
     }
 
-    public void ReturnToMenu()
+    public void ReturnToMainMenu()
     {
         GameManager.Instance.ReturnToMainMenu();
-    }
-
-    public void QuitGame()
-    {
-        GameManager.Instance.QuitGame();
     }
 }

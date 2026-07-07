@@ -5,14 +5,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Run Data")]
+    [Header("Player Progress")]
     public int totalScore;
     public int lives = 3;
     public int currentMiniGameIndex;
-    public int lastMiniGameScore;
-    public string lastMiniGameName;
 
-    [Header("Mini Game Scene Names")]
+    [Header("Last Mini Game Results")]
+    public int lastMiniGameScore;
+    public bool lastMiniGameSucceeded;
+
+    [Header("Mini Game Scenes")]
     public string[] miniGameScenes =
     {
         "Knead",
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
         lives = 3;
         currentMiniGameIndex = 0;
         lastMiniGameScore = 0;
-        lastMiniGameName = "";
+        lastMiniGameSucceeded = false;
 
         LoadNextMiniGame();
     }
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
     public void CompleteMiniGame(int scoreEarned, bool succeeded)
     {
         lastMiniGameScore = scoreEarned;
+        lastMiniGameSucceeded = succeeded;
         totalScore += scoreEarned;
 
         if (!succeeded)
@@ -75,30 +78,12 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        string sceneToLoad = miniGameScenes[currentMiniGameIndex];
-        lastMiniGameName = sceneToLoad;
+        SceneManager.LoadScene(miniGameScenes[currentMiniGameIndex]);
         currentMiniGameIndex++;
-
-        SceneManager.LoadScene(sceneToLoad);
-    }
-
-    public string GetNextMiniGameName()
-    {
-        if (currentMiniGameIndex >= miniGameScenes.Length)
-        {
-            return "Results";
-        }
-
-        return miniGameScenes[currentMiniGameIndex];
     }
 
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }

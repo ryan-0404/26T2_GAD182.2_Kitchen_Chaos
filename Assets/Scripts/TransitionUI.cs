@@ -1,31 +1,84 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class TransitionUI : MonoBehaviour
 {
-    [Header("Text References")]
-    public TMP_Text completedGameText;
-    public TMP_Text miniGameScoreText;
-    public TMP_Text totalScoreText;
-    public TMP_Text livesText;
-    public TMP_Text nextGameText;
+    [Header("UI References")]
+    [SerializeField] private TMP_Text totalScoreText;
+    [SerializeField] private CookieLivesUI cookieLivesUI;
+
+    [Header("Transition Settings")]
+    [SerializeField] private float transitionDuration = 5f;
+
+    private Coroutine transitionCoroutine;
+    private float remainingTransitionTime;
+    private bool transitionPaused;
 
     private void Start()
     {
-        completedGameText.text = "Completed: " + GameManager.Instance.lastMiniGameName;
-        miniGameScoreText.text = "Score Earned: " + GameManager.Instance.lastMiniGameScore;
-        totalScoreText.text = "Total Score: " + GameManager.Instance.totalScore;
-        livesText.text = "Lives: " + GameManager.Instance.lives;
-        nextGameText.text = "Next Game: " + GameManager.Instance.GetNextMiniGameName();
+        Time.timeScale = 1f;
+
+        remainingTransitionTime = transitionDuration;
+        transitionPaused = false;
+
+        if (totalScoreText != null && GameManager.Instance != null)
+        {
+            totalScoreText.text =
+                "Total Score: " + GameManager.Instance.totalScore;
+        }
+
+        if (cookieLivesUI != null)
+        {
+            cookieLivesUI.RefreshLives();
+        }
+
+        transitionCoroutine =
+            StartCoroutine(LoadNextGameAfterDelay());
     }
 
-    public void Continue()
+    private IEnumerator LoadNextGameAfterDelay()
     {
-        GameManager.Instance.LoadNextMiniGame();
+        while (remainingTransitionTime > 0f)
+        {
+            if (!transitionPaused)
+            {
+                remainingTransitionTime -= Time.unscaledDeltaTime;
+            }
+
+            yield return null;
+        }
+
+        transitionCoroutine = null;
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LoadNextMiniGame();
+        }
     }
 
-    public void ReturnToMenu()
+    public void PauseTransition()
     {
-        GameManager.Instance.ReturnToMainMenu();
+        transitionPaused = true;
+    }
+
+    public void ResumeTransition()
+    {
+        transitionPaused = false;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1f;
+
+        if (transitionCoroutine != null)
+        {
+            StopCoroutine(transitionCoroutine);
+        }
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ReturnToMainMenu();
+        }
     }
 }
