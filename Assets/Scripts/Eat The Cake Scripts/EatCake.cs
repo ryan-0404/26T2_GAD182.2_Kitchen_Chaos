@@ -7,15 +7,20 @@ public class EatCake : MonoBehaviour
 {
     [SerializeField]
     private int eatProgress = 0;
-    private bool leftInput = true;
+    private bool leftInput = false;
+    private bool rightInput = false;
     [SerializeField]
     private bool gameActive=false;
     public MiniGameTimerScore  miniGameTimerScore;
+    public GameObject right;
+    public GameObject left;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        left.SetActive(false);
+        right.SetActive(false);
         StartCoroutine(StartGameAfterDelay());
     }
 
@@ -27,15 +32,17 @@ public class EatCake : MonoBehaviour
         {
             eatProgress = eatProgress + 1;
             leftInput = false;
-            Debug.Log("input works");
+            rightInput = true;
+            //Debug.Log("input works");
 
         }
 
-        if (Keyboard.current.rightArrowKey.wasReleasedThisFrame && leftInput == false && gameActive == true)
+        if (Keyboard.current.rightArrowKey.wasReleasedThisFrame && rightInput == true && gameActive == true)
         {
             eatProgress = eatProgress + 1;
             leftInput = true;
-            Debug.Log("input works");
+            rightInput = false;
+            //Debug.Log("input works");
         }
 
         if (eatProgress == 25)
@@ -52,6 +59,23 @@ public class EatCake : MonoBehaviour
             miniGameTimerScore.CompleteTask();
         }
 
+        if (leftInput == true)
+        {
+            left.SetActive(true);
+        }
+        else if (leftInput == false)
+        {
+            left.SetActive(false);
+        }
+
+        if (rightInput == true) 
+        {
+            right.SetActive(true);
+        }
+        else if (rightInput == false)
+        {
+            right.SetActive(false);
+        }
 
 
     }
@@ -59,7 +83,8 @@ public class EatCake : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         gameActive = true;
-
+        leftInput = true;
+    
     }
 
 
