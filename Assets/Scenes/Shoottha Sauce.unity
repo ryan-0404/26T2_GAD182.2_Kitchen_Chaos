@@ -272,6 +272,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
+--- !u!114 &169387983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1859404947805381332, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
+  m_PrefabInstance: {fileID: 169387982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &483643661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9057836343178008475, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
@@ -349,6 +360,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 706721600}
+    - target: {fileID: 5647315586748507586, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 169387983}
     - target: {fileID: 5647315586748507586, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
       propertyPath: gameNameText
       value: 
