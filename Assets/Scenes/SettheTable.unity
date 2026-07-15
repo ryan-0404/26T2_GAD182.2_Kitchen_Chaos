@@ -429,10 +429,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c866b59424c84aa4c8d5f49cdf112db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanws:
-  - {fileID: 317783056}
-  - {fileID: 1054588870}
-  - {fileID: 1399304949}
+  miniGameTimerScore: {fileID: 1407999881}
+  gameActive: 0
+  spawns:
+  - {fileID: 317783057}
+  - {fileID: 1054588871}
+  - {fileID: 1399304950}
+  shadows:
+  - {fileID: 4236074853787058440, guid: 65d3c17fbd6e5cc48896e646e40c61d0, type: 3}
+  - {fileID: 41206667053370533, guid: 655efa61532b5f649a93a75c5557c4c8, type: 3}
+  - {fileID: 5381100213804011156, guid: d496366f2ddabe142abe37a9ebf151f6, type: 3}
+  - {fileID: 4307362493499491376, guid: bd663a977b11dd0469f87c792877505b, type: 3}
+  prefab:
+  - {fileID: 1529340861186614083, guid: b7caeed288c77054aba854c7b6c029ff, type: 3}
+  - {fileID: 3735349774151815071, guid: 5322316eeb9564041b774ad52f783ad9, type: 3}
+  - {fileID: 3138295229606172408, guid: 91d02373ad2a3db41a2d41bec1386690, type: 3}
+  - {fileID: 560991756831259347, guid: 765b37bc797078f4cb494dac33847438, type: 3}
 --- !u!65 &636954119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -606,6 +618,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1983192152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1407999881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5647315586748507586, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
+  m_PrefabInstance: {fileID: 526122669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa644f00592d9945aa775a32bb5f869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1508616147 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8953647094838660948, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
