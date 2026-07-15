@@ -52,7 +52,7 @@ public class EatCake : MonoBehaviour
 
         // end of minigame
         if (eatProgress >= 50 && gameActive == true)
-        //if (eatProgress >= 5 && gameActive == true)  low score for testing
+        //if (eatProgress >= 5 && gameActive == true)  //low score for testing
         {
             Debug.Log(" ate the cake");
             gameActive = false;
@@ -81,7 +81,7 @@ public class EatCake : MonoBehaviour
     }
     private IEnumerator StartGameAfterDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameActive = true;
         leftInput = true;
     
