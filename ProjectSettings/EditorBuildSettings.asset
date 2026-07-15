@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ShootTheSauce.unity
     guid: f61a90b2bb0413048939133f87726e5e
   - enabled: 1
-    path: Assets/Scenes/SetTheTable.unity
+    path: Assets/Scenes/Assets.unity
     guid: b9ddc2ee23235574daaca7b2ae33b55c
   - enabled: 1
     path: Assets/Scenes/ShredTheReceipt.unity
