@@ -3,32 +3,31 @@ using UnityEngine;
 public class TargetLane : MonoBehaviour
 {
     [Header("Lane Objects")]
-    [SerializeField] private GameObject conveyor;
-    [SerializeField] private GameObject missZone;
+    [SerializeField] private GameObject conveyorObject;
+    [SerializeField] private GameObject missZoneObject;
 
-    public void SetAsSuccessLane()
+    private bool successLane;
+
+    public bool IsSuccessLane
     {
-        if (missZone != null)
+        get
         {
-            missZone.SetActive(false);
-        }
-
-        if (conveyor != null)
-        {
-            conveyor.SetActive(true);
+            return successLane;
         }
     }
 
-    public void SetAsMissLane()
+    public void ConfigureLane(bool shouldBeSuccessLane)
     {
-        if (conveyor != null)
+        successLane = shouldBeSuccessLane;
+
+        if (conveyorObject != null)
         {
-            conveyor.SetActive(false);
+            conveyorObject.SetActive(shouldBeSuccessLane);
         }
 
-        if (missZone != null)
+        if (missZoneObject != null)
         {
-            missZone.SetActive(true);
+            missZoneObject.SetActive(!shouldBeSuccessLane);
         }
     }
 }

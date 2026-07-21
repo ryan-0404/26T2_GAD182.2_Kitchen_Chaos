@@ -3,33 +3,34 @@ using UnityEngine;
 public class PizzaCollisionDetector : MonoBehaviour
 {
     [Header("Required Reference")]
-    [SerializeField] private GameManagerSTS gameManagerSTS;
-
-    private bool collisionHandled;
-
-    private void OnEnable()
-    {
-        collisionHandled = false;
-    }
+    [SerializeField] private PizzaController pizzaController;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collisionHandled || gameManagerSTS == null)
+        if (pizzaController == null)
         {
             return;
         }
 
-        if (other.CompareTag("ConveyorSuccess"))
+        if (pizzaController.CurrentState != PizzaState.FlyingUpward)
         {
-            collisionHandled = true;
-            gameManagerSTS.PizzaLandedOnConveyor();
             return;
         }
 
-        if (other.CompareTag("PizzaMissZone"))
+        PizzaTargetZone targetZone =
+            other.GetComponent<PizzaTargetZone>();
+
+        if (targetZone == null)
         {
-            collisionHandled = true;
-            gameManagerSTS.PizzaMissed();
+            targetZone =
+                other.GetComponentInParent<PizzaTargetZone>();
         }
+
+        if (targetZone == null)
+        {
+            return;
+        }
+
+        targetZone.ProcessPizzaCollision(pizzaController);
     }
 }

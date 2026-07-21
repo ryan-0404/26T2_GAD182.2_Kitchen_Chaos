@@ -2,65 +2,107 @@ using UnityEngine;
 
 public class ShootTargetSelector : MonoBehaviour
 {
-    [Header("Five Target Lanes")]
+    [Header("Target Lanes")]
     [SerializeField] private TargetLane[] targetLanes;
 
     [Header("Testing")]
-    [Tooltip("-1 selects randomly. Use 0 to 4 to force a lane.")]
+    [Tooltip(
+        "-1 chooses randomly. Values 0 to 4 force a particular lane."
+    )]
     [SerializeField] private int forcedLaneIndex = -1;
 
-    private int selectedLaneIndex;
+    private int selectedLaneIndex = -1;
 
-    public int SelectedLaneIndex => selectedLaneIndex;
+    public int SelectedLaneIndex
+    {
+        get
+        {
+            return selectedLaneIndex;
+        }
+    }
 
     private void Start()
     {
-        SelectLane();
+        SelectTargetLane();
     }
 
-    private void SelectLane()
+    public void SelectTargetLane()
     {
-        if (targetLanes == null || targetLanes.Length != 5)
+        if (!ValidateLanes())
         {
-            Debug.LogError(
-                "ShootTargetSelector requires exactly five target lanes.",
-                this
-            );
-
             return;
         }
 
+        selectedLaneIndex = ChooseLaneIndex();
+
+        for (int i = 0; i < targetLanes.Length; i++)
+        {
+            bool isSelectedLane =
+                i == selectedLaneIndex;
+
+            targetLanes[i].ConfigureLane(
+                isSelectedLane
+            );
+        }
+
+        Debug.Log(
+            "Shoot the Sauce success lane: " +
+            selectedLaneIndex,
+            this
+        );
+    }
+
+    private int ChooseLaneIndex()
+    {
         if (forcedLaneIndex >= 0 &&
             forcedLaneIndex < targetLanes.Length)
         {
-            selectedLaneIndex = forcedLaneIndex;
+            return forcedLaneIndex;
         }
-        else
+
+        return Random.Range(
+            0,
+            targetLanes.Length
+        );
+    }
+
+    private bool ValidateLanes()
+    {
+        if (targetLanes == null)
         {
-            selectedLaneIndex =
-                Random.Range(0, targetLanes.Length);
+            Debug.LogError(
+                "Target Lanes has not been assigned.",
+                this
+            );
+
+            return false;
+        }
+
+        if (targetLanes.Length != 5)
+        {
+            Debug.LogError(
+                "ShootTargetSelector requires exactly five lanes.",
+                this
+            );
+
+            return false;
         }
 
         for (int i = 0; i < targetLanes.Length; i++)
         {
             if (targetLanes[i] == null)
             {
-                Debug.LogWarning(
-                    $"Target lane {i} has not been assigned.",
+                Debug.LogError(
+                    "Target Lane element " +
+                    i +
+                    " has not been assigned.",
                     this
                 );
 
-                continue;
-            }
-
-            if (i == selectedLaneIndex)
-            {
-                targetLanes[i].SetAsSuccessLane();
-            }
-            else
-            {
-                targetLanes[i].SetAsMissLane();
+                return false;
             }
         }
+
+        return true;
     }
 }

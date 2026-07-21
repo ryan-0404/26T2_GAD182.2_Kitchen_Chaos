@@ -1,75 +1,56 @@
-using System.Collections;
 using UnityEngine;
 
 public class GameManagerSTS : MonoBehaviour
 {
-    [Header("Required References")]
+    [Header("Food Frenzy UI Infrastructure")]
     [SerializeField] private MiniGameTimerScore miniGameTimerScore;
-    [SerializeField] private PizzaMovement pizzaMovement;
 
-    [Header("Respawn Settings")]
-    [SerializeField] private float respawnDelay = 0.15f;
+    [Header("Shoot the Sauce")]
+    [SerializeField] private PizzaController pizzaController;
 
-    private bool isRespawning;
     private bool gameCompleted;
 
-    public bool CanPlay => !isRespawning && !gameCompleted;
-
-    public void PizzaLandedOnConveyor()
+    public bool GameCompleted
     {
-        if (!CanPlay || pizzaMovement == null)
+        get
         {
-            return;
+            return gameCompleted;
         }
+    }
 
-        if (!pizzaMovement.HasBeenShot)
+    private void Awake()
+    {
+        gameCompleted = false;
+    }
+
+    public void CompleteMiniGame()
+    {
+        if (gameCompleted)
         {
             return;
         }
 
         gameCompleted = true;
-        pizzaMovement.StopMovement();
+
+        if (pizzaController != null)
+        {
+            pizzaController.FinishGame();
+        }
 
         if (miniGameTimerScore == null)
         {
             Debug.LogError(
-                "MiniGameTimerScore has not been assigned.",
+                "MiniGameTimerScore has not been assigned to GameManagerSTS.",
                 this
             );
 
             return;
         }
 
+        /*
+         * This keeps Shoot the Sauce compatible with the
+         * existing Food Frenzy score and transition system.
+         */
         miniGameTimerScore.CompleteTask();
-    }
-
-    public void PizzaMissed()
-    {
-        if (!CanPlay || pizzaMovement == null)
-        {
-            return;
-        }
-
-        if (!pizzaMovement.HasBeenShot)
-        {
-            return;
-        }
-
-        StartCoroutine(RespawnPizza());
-    }
-
-    private IEnumerator RespawnPizza()
-    {
-        isRespawning = true;
-
-        pizzaMovement.StopMovement();
-        pizzaMovement.HidePizza();
-
-        yield return new WaitForSeconds(respawnDelay);
-
-        pizzaMovement.ResetPizza();
-        pizzaMovement.ShowPizza();
-
-        isRespawning = false;
     }
 }
