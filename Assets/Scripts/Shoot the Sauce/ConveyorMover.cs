@@ -3,7 +3,7 @@ using UnityEngine;
 public class ConveyorMover : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float upwardSpeed = 1.5f;
+    [SerializeField] private float upwardSpeed = 2f;
 
     [Header("Loop Positions")]
     [SerializeField] private float resetY = 2.5f;
