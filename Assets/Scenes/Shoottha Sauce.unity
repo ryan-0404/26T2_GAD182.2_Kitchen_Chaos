@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerSTS: {fileID: 678250464}
   spawnPoint: {fileID: 482440044}
-  horizontalSpeed: 5
+  horizontalSpeed: 7
   leftLimit: -7
   rightLimit: 7
   upwardSpeed: 10
