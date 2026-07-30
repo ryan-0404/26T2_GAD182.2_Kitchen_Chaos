@@ -108,4 +108,9 @@ public class MiniGameTimerScore : MonoBehaviour
             timerText.text = "Time: " + Mathf.CeilToInt(timeRemaining);
         }
     }
+
+    public int GetCurrentTimeScore()
+    {
+        return CalculateScore();
+    }
 }
