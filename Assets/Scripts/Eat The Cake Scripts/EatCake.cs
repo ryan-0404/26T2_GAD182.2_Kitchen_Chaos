@@ -15,6 +15,11 @@ public class EatCake : MonoBehaviour
     public GameObject right;
     public GameObject left;
 
+    public Sprite[] cakes;
+    public SpriteRenderer spriteRenderer;
+
+    public AudioSource audioSource;
+    public AudioClip sound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +38,7 @@ public class EatCake : MonoBehaviour
             eatProgress = eatProgress + 1;
             leftInput = false;
             rightInput = true;
+            audioSource.PlayOneShot(sound);
             //Debug.Log("input works");
 
         }
@@ -42,19 +48,36 @@ public class EatCake : MonoBehaviour
             eatProgress = eatProgress + 1;
             leftInput = true;
             rightInput = false;
+            audioSource.PlayOneShot(sound);
             //Debug.Log("input works");
         }
 
-        if (eatProgress == 25)
+        if (eatProgress == 10)
         {
-            transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+            spriteRenderer.sprite = cakes[0];
         }
+        else if (eatProgress == 20)
+        {
+            spriteRenderer.sprite = cakes[1];
+        }
+        else if (eatProgress == 30)
+        {
+            spriteRenderer.sprite = cakes[2];
+        }
+        else if (eatProgress == 40)
+        {
+            spriteRenderer.sprite = cakes[3];
+        }
+
 
         // end of minigame
         if (eatProgress >= 50 && gameActive == true)
         //if (eatProgress >= 5 && gameActive == true)  low score for testing
         {
+            spriteRenderer.sprite = cakes[4];
             Debug.Log(" ate the cake");
+            rightInput = false;
+            leftInput = false;
             gameActive = false;
             miniGameTimerScore.CompleteTask();
         }
@@ -81,7 +104,7 @@ public class EatCake : MonoBehaviour
     }
     private IEnumerator StartGameAfterDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         gameActive = true;
         leftInput = true;
     

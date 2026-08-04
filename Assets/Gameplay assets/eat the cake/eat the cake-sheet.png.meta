@@ -205,10 +205,10 @@ TextureImporter:
       name: eat the cake-sheet_0
       rect:
         serializedVersion: 2
-        x: 222
-        y: 3054
-        width: 1236
-        height: 860
+        x: 0
+        y: 2048
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: eat the cake-sheet_1
       rect:
         serializedVersion: 2
-        x: 2270
-        y: 3054
-        width: 1236
-        height: 860
+        x: 2048
+        y: 2048
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: eat the cake-sheet_2
       rect:
         serializedVersion: 2
-        x: 4318
-        y: 3058
-        width: 1079
-        height: 856
+        x: 4096
+        y: 2048
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: eat the cake-sheet_3
       rect:
         serializedVersion: 2
-        x: 5465
-        y: 3219
-        width: 8
-        height: 6
+        x: 0
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: eat the cake-sheet_4
       rect:
         serializedVersion: 2
-        x: 222
-        y: 1010
-        width: 638
-        height: 856
+        x: 2048
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: eat the cake-sheet_5
       rect:
         serializedVersion: 2
-        x: 971
-        y: 1640
-        width: 8
-        height: 10
+        x: 4096
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,363 +333,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_6
-      rect:
-        serializedVersion: 2
-        x: 958
-        y: 1627
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 38cbc8a26ddf86650800000000000000
-      internalID: 6226505581118405763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1296
-        y: 1171
-        width: 81
-        height: 336
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad7973c5ab378f520800000000000000
-      internalID: 2736064017875834842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_8
-      rect:
-        serializedVersion: 2
-        x: 2270
-        y: 1010
-        width: 393
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4dd2f8b41a82c81c0800000000000000
-      internalID: -4500177254427447852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_9
-      rect:
-        serializedVersion: 2
-        x: 3344
-        y: 1171
-        width: 81
-        height: 336
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eddad44b84b059c80800000000000000
-      internalID: -8316728729979212322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_10
-      rect:
-        serializedVersion: 2
-        x: 5392
-        y: 1171
-        width: 81
-        height: 336
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2124cee84dd32ff0800000000000000
-      internalID: -61962664539840214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_11
-      rect:
-        serializedVersion: 2
-        x: 4852
-        y: 1142
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 459a073428a658c20800000000000000
-      internalID: 3208087417281096020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_12
-      rect:
-        serializedVersion: 2
-        x: 4339
-        y: 1112
-        width: 15
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d99dc7aa2e701d1f0800000000000000
-      internalID: -1022026970332079715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_13
-      rect:
-        serializedVersion: 2
-        x: 4438
-        y: 1106
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c48818db8c62ec030800000000000000
-      internalID: 3516791002637633612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_14
-      rect:
-        serializedVersion: 2
-        x: 4489
-        y: 1106
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22d6c797e5437aa20800000000000000
-      internalID: 3073482851073420578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_15
-      rect:
-        serializedVersion: 2
-        x: 4537
-        y: 1106
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b8146ece52ab127e0800000000000000
-      internalID: -1791946504665677429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_16
-      rect:
-        serializedVersion: 2
-        x: 4579
-        y: 1118
-        width: 21
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a3f1af1e4307d850800000000000000
-      internalID: 6401589029403489185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_17
-      rect:
-        serializedVersion: 2
-        x: 4768
-        y: 1103
-        width: 48
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46a6b8adb86d42e10800000000000000
-      internalID: 2172096816454789732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_18
-      rect:
-        serializedVersion: 2
-        x: 4381
-        y: 1103
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8a374be538101860800000000000000
-      internalID: 7498519999431522958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_19
-      rect:
-        serializedVersion: 2
-        x: 4399
-        y: 1100
-        width: 15
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55d1645df15cd1140800000000000000
-      internalID: 4692123127302724949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_20
-      rect:
-        serializedVersion: 2
-        x: 4417
-        y: 1091
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b85bfff2e9a52f290800000000000000
-      internalID: -7858118764351474293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eat the cake-sheet_21
-      rect:
-        serializedVersion: 2
-        x: 4630
-        y: 1103
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 907e77c82a340db20800000000000000
-      internalID: 3157097704207148809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 375ec7efecdbcea4586b8312e2abce52
     internalID: 0
     vertices: []
     indices: 
@@ -701,26 +349,10 @@ TextureImporter:
     nameFileIdTable:
       eat the cake-sheet_0: -6216677602708116848
       eat the cake-sheet_1: -2236427693993884657
-      eat the cake-sheet_10: -61962664539840214
-      eat the cake-sheet_11: 3208087417281096020
-      eat the cake-sheet_12: -1022026970332079715
-      eat the cake-sheet_13: 3516791002637633612
-      eat the cake-sheet_14: 3073482851073420578
-      eat the cake-sheet_15: -1791946504665677429
-      eat the cake-sheet_16: 6401589029403489185
-      eat the cake-sheet_17: 2172096816454789732
-      eat the cake-sheet_18: 7498519999431522958
-      eat the cake-sheet_19: 4692123127302724949
       eat the cake-sheet_2: -2971785705812047034
-      eat the cake-sheet_20: -7858118764351474293
-      eat the cake-sheet_21: 3157097704207148809
       eat the cake-sheet_3: -6174026717593803401
       eat the cake-sheet_4: -8043988403976768416
       eat the cake-sheet_5: 1486755227059852714
-      eat the cake-sheet_6: 6226505581118405763
-      eat the cake-sheet_7: 2736064017875834842
-      eat the cake-sheet_8: -4500177254427447852
-      eat the cake-sheet_9: -8316728729979212322
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
