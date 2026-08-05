@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManagerDTC : MonoBehaviour
 {
-    [Header("Existing Systems")]
+    [Header("Existing Food Frenzy System")]
     [SerializeField] private MiniGameTimerScore miniGameTimerScore;
 
     [Header("Debug")]
@@ -29,15 +29,6 @@ public class GameManagerDTC : MonoBehaviour
             return;
         }
 
-        if (GameManager.Instance == null)
-        {
-            Debug.LogError(
-                "GameManagerDTC could not find the persistent GameManager."
-            );
-
-            return;
-        }
-
         miniGameCompleted = true;
 
         float validMultiplier = Mathf.Clamp01(scoreMultiplier);
@@ -50,9 +41,18 @@ public class GameManagerDTC : MonoBehaviour
 
         miniGameTimerScore.StopTimerForExternalCompletion();
 
-        GameManager.Instance.CompleteMiniGame(
-            finalScore,
-            true
-        );
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.CompleteMiniGame(
+                finalScore,
+                true
+            );
+        }
+        else
+        {
+            Debug.LogError(
+                "GameManagerDTC could not find the persistent GameManager."
+            );
+        }
     }
 }

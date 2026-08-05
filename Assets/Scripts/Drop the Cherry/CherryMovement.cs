@@ -1,30 +1,35 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class CherryMovement : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Required References")]
     [SerializeField] private CherryState cherryState;
-    [SerializeField] private Rigidbody2D cherryRigidbody;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform leftBoundary;
     [SerializeField] private Transform rightBoundary;
 
     [Header("Movement")]
     [SerializeField] private float horizontalSpeed = 4f;
-    [SerializeField] private float fallingSpeed = 7f;
-    [SerializeField] private bool startMovingRight = true;
+    [SerializeField] private bool beginMovingRight = true;
 
+    private Rigidbody2D cherryRigidbody;
     private int horizontalDirection;
 
     private void Awake()
     {
-        FindMissingReferences();
+        cherryRigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
     {
-        ResetDirection();
-        MoveToSpawnPoint();
+        SetStartingDirection();
+        ResetToSpawn();
+
+        if (cherryState != null)
+        {
+            cherryState.SetPhase(CherryPhase.Waiting);
+        }
     }
 
     private void FixedUpdate()
@@ -34,27 +39,12 @@ public class CherryMovement : MonoBehaviour
             return;
         }
 
-        if (cherryState.CurrentState == CherryState.State.MovingHorizontally)
+        if (!cherryState.CanMoveHorizontally)
         {
-            MoveHorizontally();
-        }
-        else if (cherryState.CurrentState == CherryState.State.Falling)
-        {
-            MoveDownward();
-        }
-    }
-
-    private void FindMissingReferences()
-    {
-        if (cherryState == null)
-        {
-            cherryState = GetComponent<CherryState>();
+            return;
         }
 
-        if (cherryRigidbody == null)
-        {
-            cherryRigidbody = GetComponent<Rigidbody2D>();
-        }
+        MoveHorizontally();
     }
 
     public void BeginHorizontalMovement()
@@ -64,44 +54,34 @@ public class CherryMovement : MonoBehaviour
             return;
         }
 
-        if (cherryState.CurrentState != CherryState.State.Waiting &&
-            cherryState.CurrentState != CherryState.State.Respawning)
+        if (cherryState.CurrentPhase != CherryPhase.Waiting &&
+            cherryState.CurrentPhase != CherryPhase.Respawning)
         {
             return;
         }
 
-        ResetDirection();
-        cherryState.SetState(CherryState.State.MovingHorizontally);
-    }
+        SetStartingDirection();
 
-    public void Drop()
-    {
-        if (cherryState == null || !cherryState.CanDrop)
-        {
-            return;
-        }
-
-        cherryState.SetState(CherryState.State.Falling);
+        cherryState.SetPhase(
+            CherryPhase.MovingHorizontally
+        );
     }
 
     private void MoveHorizontally()
     {
-        if (!HasValidMovementReferences())
+        if (cherryRigidbody == null ||
+            leftBoundary == null ||
+            rightBoundary == null)
         {
             return;
         }
 
-        Vector2 currentPosition = cherryRigidbody.position;
+        Vector2 nextPosition = cherryRigidbody.position;
 
-        float movement =
+        nextPosition.x +=
             horizontalDirection *
             horizontalSpeed *
             Time.fixedDeltaTime;
-
-        Vector2 nextPosition = new Vector2(
-            currentPosition.x + movement,
-            currentPosition.y
-        );
 
         if (nextPosition.x >= rightBoundary.position.x)
         {
@@ -117,29 +97,13 @@ public class CherryMovement : MonoBehaviour
         cherryRigidbody.MovePosition(nextPosition);
     }
 
-    private void MoveDownward()
-    {
-        if (cherryRigidbody == null)
-        {
-            return;
-        }
-
-        Vector2 currentPosition = cherryRigidbody.position;
-
-        Vector2 nextPosition = new Vector2(
-            currentPosition.x,
-            currentPosition.y - fallingSpeed * Time.fixedDeltaTime
-        );
-
-        cherryRigidbody.MovePosition(nextPosition);
-    }
-
-    public void MoveToSpawnPoint()
+    public void ResetToSpawn()
     {
         if (spawnPoint == null)
         {
             Debug.LogError(
-                "CherryMovement requires a Spawn Point reference."
+                "CherryMovement requires a Spawn Point reference.",
+                this
             );
 
             return;
@@ -148,6 +112,7 @@ public class CherryMovement : MonoBehaviour
         if (cherryRigidbody != null)
         {
             cherryRigidbody.position = spawnPoint.position;
+            StopRigidbodyMovement();
         }
         else
         {
@@ -155,7 +120,7 @@ public class CherryMovement : MonoBehaviour
         }
     }
 
-    public void StopMovement()
+    public void StopRigidbodyMovement()
     {
         if (cherryRigidbody == null)
         {
@@ -171,23 +136,15 @@ public class CherryMovement : MonoBehaviour
         cherryRigidbody.angularVelocity = 0f;
     }
 
-    public void ResetDirection()
+    private void SetStartingDirection()
     {
-        horizontalDirection = startMovingRight ? 1 : -1;
-    }
-
-    private bool HasValidMovementReferences()
-    {
-        if (cherryRigidbody == null)
+        if (beginMovingRight)
         {
-            return false;
+            horizontalDirection = 1;
         }
-
-        if (leftBoundary == null || rightBoundary == null)
+        else
         {
-            return false;
+            horizontalDirection = -1;
         }
-
-        return true;
     }
 }

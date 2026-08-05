@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class CherryRespawner : MonoBehaviour
+public class CherryRespawn : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Required References")]
     [SerializeField] private CherryState cherryState;
     [SerializeField] private CherryMovement cherryMovement;
-    [SerializeField] private SpriteRenderer cherrySpriteRenderer;
+
+    [Header("Components")]
+    [SerializeField] private SpriteRenderer cherryRenderer;
     [SerializeField] private Collider2D cherryCollider;
 
     [Header("Respawning")]
@@ -14,28 +16,11 @@ public class CherryRespawner : MonoBehaviour
 
     private Coroutine respawnCoroutine;
 
-    public bool IsRespawning => respawnCoroutine != null;
-
     private void Awake()
     {
-        FindMissingReferences();
-    }
-
-    private void FindMissingReferences()
-    {
-        if (cherryState == null)
+        if (cherryRenderer == null)
         {
-            cherryState = GetComponent<CherryState>();
-        }
-
-        if (cherryMovement == null)
-        {
-            cherryMovement = GetComponent<CherryMovement>();
-        }
-
-        if (cherrySpriteRenderer == null)
-        {
-            cherrySpriteRenderer = GetComponent<SpriteRenderer>();
+            cherryRenderer = GetComponent<SpriteRenderer>();
         }
 
         if (cherryCollider == null)
@@ -44,39 +29,55 @@ public class CherryRespawner : MonoBehaviour
         }
     }
 
-    public void Respawn()
+    public void BeginRespawn()
     {
+        if (cherryState == null)
+        {
+            return;
+        }
+
+        if (!cherryState.IsFalling)
+        {
+            return;
+        }
+
         if (respawnCoroutine != null)
         {
             return;
         }
 
-        respawnCoroutine = StartCoroutine(RespawnRoutine());
+        respawnCoroutine = StartCoroutine(
+            RespawnRoutine()
+        );
     }
 
     private IEnumerator RespawnRoutine()
     {
-        if (cherryState != null)
-        {
-            cherryState.SetState(CherryState.State.Respawning);
-        }
+        cherryState.SetPhase(CherryPhase.Respawning);
 
         if (cherryMovement != null)
         {
-            cherryMovement.StopMovement();
+            cherryMovement.StopRigidbodyMovement();
         }
 
         SetCherryVisible(false);
 
         yield return new WaitForSeconds(respawnDelay);
 
+        if (cherryState.IsFinished)
+        {
+            respawnCoroutine = null;
+            yield break;
+        }
+
         if (cherryMovement != null)
         {
-            cherryMovement.MoveToSpawnPoint();
-            cherryMovement.ResetDirection();
+            cherryMovement.ResetToSpawn();
         }
 
         SetCherryVisible(true);
+
+        cherryState.SetPhase(CherryPhase.Waiting);
 
         if (cherryMovement != null)
         {
@@ -86,16 +87,16 @@ public class CherryRespawner : MonoBehaviour
         respawnCoroutine = null;
     }
 
-    private void SetCherryVisible(bool isVisible)
+    private void SetCherryVisible(bool visible)
     {
-        if (cherrySpriteRenderer != null)
+        if (cherryRenderer != null)
         {
-            cherrySpriteRenderer.enabled = isVisible;
+            cherryRenderer.enabled = visible;
         }
 
         if (cherryCollider != null)
         {
-            cherryCollider.enabled = isVisible;
+            cherryCollider.enabled = visible;
         }
     }
 }

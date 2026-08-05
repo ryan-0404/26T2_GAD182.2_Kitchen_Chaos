@@ -1,32 +1,64 @@
 using UnityEngine;
 
+public enum CherryPhase
+{
+    Waiting,
+    MovingHorizontally,
+    Falling,
+    Respawning,
+    Finished
+}
+
 public class CherryState : MonoBehaviour
 {
-    public enum State
-    {
-        Waiting,
-        MovingHorizontally,
-        Falling,
-        Respawning,
-        Finished
-    }
-
     [Header("Debug")]
-    [SerializeField] private State currentState = State.Waiting;
+    [SerializeField] private CherryPhase currentPhase =
+        CherryPhase.Waiting;
 
-    public State CurrentState => currentState;
-
-    public bool CanDrop =>
-        currentState == State.MovingHorizontally;
-
-    public bool IsFalling =>
-        currentState == State.Falling;
-
-    public bool HasFinished =>
-        currentState == State.Finished;
-
-    public void SetState(State newState)
+    public CherryPhase CurrentPhase
     {
-        currentState = newState;
+        get
+        {
+            return currentPhase;
+        }
     }
-}j
+
+    public bool CanMoveHorizontally
+    {
+        get
+        {
+            return currentPhase ==
+                   CherryPhase.MovingHorizontally;
+        }
+    }
+
+    public bool CanDrop
+    {
+        get
+        {
+            return currentPhase ==
+                   CherryPhase.MovingHorizontally;
+        }
+    }
+
+    public bool IsFalling
+    {
+        get
+        {
+            return currentPhase == CherryPhase.Falling;
+        }
+    }
+
+    public bool IsFinished
+    {
+        get
+        {
+            return currentPhase == CherryPhase.Finished;
+        }
+    }
+
+    public void SetPhase(CherryPhase newPhase)
+    {
+        currentPhase = newPhase;
+    }
+}
