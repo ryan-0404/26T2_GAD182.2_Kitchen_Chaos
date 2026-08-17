@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c866b59424c84aa4c8d5f49cdf112db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGameTimerScore: {fileID: 1407999881}
+  miniGameTimerScore: {fileID: 2110708332}
   gameActive: 0
   spawns:
   - {fileID: 317783057}
@@ -828,17 +828,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1983192152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1407999881 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5647315586748507586, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
-  m_PrefabInstance: {fileID: 526122669}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa644f00592d9945aa775a32bb5f869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1508616147 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8953647094838660948, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
@@ -980,6 +969,7 @@ Transform:
   - {fileID: 317783057}
   - {fileID: 1054588871}
   - {fileID: 1399304950}
+  - {fileID: 1739266345}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025167122
@@ -1152,7 +1142,7 @@ MonoBehaviour:
   gameNameDisplayTime: 2
   timerText: {fileID: 706721600}
   gameNameText: {fileID: 981219921}
-  pauseButton: {fileID: 550637900}
+  pauseButton: {fileID: 0}
 --- !u!1 &2123623324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5805703621330684168, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
