@@ -21,6 +21,9 @@ public class EatCake : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip sound;
 
+    public AudioSource winSource;
+    public AudioClip winSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -75,6 +78,7 @@ public class EatCake : MonoBehaviour
         //if (eatProgress >= 5 && gameActive == true)  //low score for testing
         {
             spriteRenderer.sprite = cakes[4];
+            winSource.PlayOneShot(winSound);
             Debug.Log(" ate the cake");
             rightInput = false;
             leftInput = false;

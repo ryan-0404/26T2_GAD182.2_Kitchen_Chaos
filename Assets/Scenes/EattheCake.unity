@@ -773,6 +773,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1358705611}
   audioSource: {fileID: 1358705612}
   sound: {fileID: 8300000, guid: 952077ee902490f4fade8da57a16e827, type: 3}
+  winSource: {fileID: 1358705612}
+  winSound: {fileID: 8300000, guid: c403307ac4f6e6d4eb06d43c0fa1ce06, type: 3}
 --- !u!212 &1358705611
 SpriteRenderer:
   m_ObjectHideFlags: 0
