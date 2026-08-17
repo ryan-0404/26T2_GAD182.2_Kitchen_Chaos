@@ -1,6 +1,7 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class MiniGameTimerScore : MonoBehaviour
 {
@@ -12,11 +13,18 @@ public class MiniGameTimerScore : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text gameNameText;
+    [SerializeField] private Button pauseButton;
 
     private float timeRemaining;
     private float elapsedTime;
+
     private bool timerStarted;
     private bool gameEnded;
+
+    private void Awake()
+    {
+        HidePauseButton();
+    }
 
     private void Start()
     {
@@ -27,7 +35,14 @@ public class MiniGameTimerScore : MonoBehaviour
 
         if (timerText != null)
         {
-            timerText.text = "";
+            timerText.text = string.Empty;
+        }
+        else
+        {
+            Debug.LogWarning(
+                "Timer Text has not been assigned in MiniGameTimerScore.",
+                this
+            );
         }
 
         if (gameNameText != null)
@@ -35,13 +50,22 @@ public class MiniGameTimerScore : MonoBehaviour
             gameNameText.text = miniGameName;
             gameNameText.gameObject.SetActive(true);
         }
+        else
+        {
+            Debug.LogWarning(
+                "Game Name Text has not been assigned in MiniGameTimerScore.",
+                this
+            );
+        }
+
+        HidePauseButton();
 
         StartCoroutine(StartGameAfterDelay());
     }
 
     private IEnumerator StartGameAfterDelay()
     {
-        yield return new WaitForSeconds(gameNameDisplayTime);
+        yield return new WaitForSecondsRealtime(gameNameDisplayTime);
 
         if (gameNameText != null)
         {
@@ -49,19 +73,24 @@ public class MiniGameTimerScore : MonoBehaviour
         }
 
         timerStarted = true;
+
+        ShowPauseButton();
         UpdateTimerUI();
     }
 
     private void Update()
     {
-        if (gameEnded || !timerStarted) return;
+        if (!timerStarted || gameEnded)
+        {
+            return;
+        }
 
         elapsedTime += Time.deltaTime;
         timeRemaining -= Time.deltaTime;
 
-        if (timeRemaining <= 0)
+        if (timeRemaining <= 0f)
         {
-            timeRemaining = 0;
+            timeRemaining = 0f;
             UpdateTimerUI();
             EndMiniGame(false);
             return;
@@ -72,23 +101,49 @@ public class MiniGameTimerScore : MonoBehaviour
 
     public void CompleteTask()
     {
-        if (gameEnded || !timerStarted) return;
+        if (!timerStarted || gameEnded)
+        {
+            return;
+        }
 
         EndMiniGame(true);
     }
 
     public void FailTask()
     {
-        if (gameEnded || !timerStarted) return;
+        if (!timerStarted || gameEnded)
+        {
+            return;
+        }
 
         EndMiniGame(false);
     }
 
     private void EndMiniGame(bool succeeded)
     {
+        if (gameEnded)
+        {
+            return;
+        }
+
         gameEnded = true;
+        timerStarted = false;
+
+        HidePauseButton();
 
         int scoreEarned = succeeded ? CalculateScore() : 0;
+
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError(
+                "MiniGameTimerScore could not find GameManager. " +
+                "Start the game from the MainMenu scene and ensure " +
+                "GameManager.cs is attached to a persistent GameObject.",
+                this
+            );
+
+            return;
+        }
 
         GameManager.Instance.CompleteMiniGame(scoreEarned, succeeded);
     }
@@ -103,9 +158,39 @@ public class MiniGameTimerScore : MonoBehaviour
 
     private void UpdateTimerUI()
     {
-        if (timerText != null)
+        if (timerText == null)
         {
-            timerText.text = "Time: " + Mathf.CeilToInt(timeRemaining);
+            return;
         }
+
+        int displayedTime = Mathf.CeilToInt(timeRemaining);
+        timerText.text = "Time: " + displayedTime;
+    }
+
+    private void HidePauseButton()
+    {
+        if (pauseButton == null)
+        {
+            return;
+        }
+
+        pauseButton.interactable = false;
+        pauseButton.gameObject.SetActive(false);
+    }
+
+    private void ShowPauseButton()
+    {
+        if (pauseButton == null)
+        {
+            Debug.LogError(
+                "Pause Button has not been assigned in MiniGameTimerScore.",
+                this
+            );
+
+            return;
+        }
+
+        pauseButton.gameObject.SetActive(true);
+        pauseButton.interactable = true;
     }
 }
