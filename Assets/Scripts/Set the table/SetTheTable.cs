@@ -19,6 +19,9 @@ public class SetTheTable : MonoBehaviour
     public GameObject currentItem;
     public GameObject currentShadow;
 
+    public AudioSource winSource;
+    public AudioClip winSound;
+
     private int score = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,7 +36,7 @@ public class SetTheTable : MonoBehaviour
         if (Keyboard.current.leftArrowKey.isPressed && gameActive == true)
         {
            // Debug.Log("left press");
-            Rotate(10);
+            Rotate(15);
             //Quaternion targetRotation = Quaternion.Euler(0f, 0f, 10f);
             //float smoothness = 10f;
             //currentItem.transform.rotation *= Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothness);
@@ -41,7 +44,7 @@ public class SetTheTable : MonoBehaviour
         if (Keyboard.current.rightArrowKey.isPressed && gameActive == true)
         {
            // Debug.Log("right press");
-            Rotate(-10);
+            Rotate(-15);
             //Quaternion targetRotation = Quaternion.Euler(0f, 0f, -10f);
             //float smoothness = 10f;
             //currentItem.transform.rotation *= Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothness);
@@ -107,10 +110,11 @@ public class SetTheTable : MonoBehaviour
         //{
         //    Debug.Log("close");
         //}
-        if (angle > 0.99f && space.y > -0.1 && space.y < 0.1)
+        if (angle > 0.9999f && space.y > -0.1 && space.y < 0.1)
         {
-                score++;
+            score++;
                 Y++;
+            winSource.PlayOneShot(winSound);
             if (score == 3)
             {
                 CheckWin();
