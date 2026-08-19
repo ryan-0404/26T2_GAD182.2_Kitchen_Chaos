@@ -366,10 +366,7 @@ MonoBehaviour:
   lastMiniGameScore: 0
   lastMiniGameSucceeded: 0
   miniGameScenes:
-  - Knead
-  - Stamp
   - EatTheCake
-  - SliceThePizza
   - SetTheTable
   - ShootTheSauce
 --- !u!4 &162460796

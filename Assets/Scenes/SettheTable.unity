@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27004d245748522478a25afb5c5665fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGameName: Eat
+  miniGameName: Match
   timeLimit: 10
   gameNameDisplayTime: 2
   timerText: {fileID: 706721600}
