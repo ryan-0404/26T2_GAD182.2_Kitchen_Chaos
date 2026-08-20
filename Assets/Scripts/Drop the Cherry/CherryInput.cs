@@ -1,23 +1,26 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CherryInput : MonoBehaviour
 {
     [Header("Required References")]
-    [SerializeField] private CherryState cherryState;
     [SerializeField] private CherryMovement cherryMovement;
-    [SerializeField] private CherryDrop cherryDrop;
+    [SerializeField] private GameManagerDTC gameManagerDTC;
     [SerializeField] private MiniGameTimerScore miniGameTimerScore;
 
-    [Header("Input Options")]
-    [SerializeField] private bool allowSpaceKey = true;
-    [SerializeField] private bool allowLeftMouseButton = true;
+    [Header("Input Settings")]
+    [SerializeField] private float inputDelay = 2f;
 
+    private bool delayFinished;
     private bool gameplayActivated;
 
     private void Start()
     {
+        delayFinished = false;
         gameplayActivated = false;
+
+        StartCoroutine(EnableInputAfterDelay());
     }
 
     private void Update()
@@ -29,21 +32,39 @@ public class CherryInput : MonoBehaviour
             return;
         }
 
-        if (cherryState == null ||
-            cherryDrop == null)
+        if (!delayFinished)
         {
             return;
         }
 
-        if (!cherryState.CanDrop)
+        if (cherryMovement == null)
         {
             return;
         }
 
-        if (DropInputPressed())
+        if (gameManagerDTC == null)
         {
-            cherryDrop.DropCherry();
+            return;
         }
+
+        if (!gameManagerDTC.CanPlay)
+        {
+            return;
+        }
+
+        if (!cherryMovement.CanDrop)
+        {
+            return;
+        }
+
+        CheckForInput();
+    }
+
+    private IEnumerator EnableInputAfterDelay()
+    {
+        yield return new WaitForSeconds(inputDelay);
+
+        delayFinished = true;
     }
 
     private void ActivateGameplayWhenReady()
@@ -67,39 +88,30 @@ public class CherryInput : MonoBehaviour
 
         if (cherryMovement != null)
         {
-            cherryMovement.BeginHorizontalMovement();
+            cherryMovement.BeginMovement();
         }
     }
 
-    private bool DropInputPressed()
+    private void CheckForInput()
     {
-        if (allowSpaceKey &&
-            Input.GetKeyDown(KeyCode.Space))
+        bool spacePressed =
+            Input.GetKeyDown(KeyCode.Space);
+
+        bool mousePressed =
+            Input.GetMouseButtonDown(0);
+
+        if (!spacePressed && !mousePressed)
         {
-            return true;
+            return;
         }
 
-        if (allowLeftMouseButton &&
-            Input.GetMouseButtonDown(0))
+        if (mousePressed &&
+            EventSystem.current != null &&
+            EventSystem.current.IsPointerOverGameObject())
         {
-            if (PointerIsOverUI())
-            {
-                return false;
-            }
-
-            return true;
+            return;
         }
 
-        return false;
-    }
-
-    private bool PointerIsOverUI()
-    {
-        if (EventSystem.current == null)
-        {
-            return false;
-        }
-
-        return EventSystem.current.IsPointerOverGameObject();
+        cherryMovement.DropCherry();
     }
 }

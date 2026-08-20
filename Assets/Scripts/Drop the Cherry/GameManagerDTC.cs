@@ -2,57 +2,57 @@ using UnityEngine;
 
 public class GameManagerDTC : MonoBehaviour
 {
-    [Header("Existing Food Frenzy System")]
+    [Header("Required References")]
     [SerializeField] private MiniGameTimerScore miniGameTimerScore;
+    [SerializeField] private CherryMovement cherryMovement;
 
-    [Header("Debug")]
-    [SerializeField] private bool miniGameCompleted;
+    private bool gameCompleted;
+
+    public bool CanPlay
+    {
+        get
+        {
+            return !gameCompleted;
+        }
+    }
+
+    public bool GameCompleted
+    {
+        get
+        {
+            return gameCompleted;
+        }
+    }
 
     private void Start()
     {
-        miniGameCompleted = false;
+        gameCompleted = false;
     }
 
-    public void CompleteMiniGame(float scoreMultiplier)
+    public void CherryLandedOnCupcake()
     {
-        if (miniGameCompleted)
+        if (gameCompleted)
         {
             return;
+        }
+
+        gameCompleted = true;
+
+        if (cherryMovement != null)
+        {
+            cherryMovement.StopMovement();
         }
 
         if (miniGameTimerScore == null)
         {
             Debug.LogError(
-                "GameManagerDTC requires a MiniGameTimerScore reference."
+                "MiniGameTimerScore has not been assigned to GameManagerDTC.",
+                this
             );
 
             return;
         }
 
-        miniGameCompleted = true;
-
-        float validMultiplier = Mathf.Clamp01(scoreMultiplier);
-
-        int timeScore =
-            miniGameTimerScore.GetCurrentTimeScore();
-
-        int finalScore =
-            Mathf.RoundToInt(timeScore * validMultiplier);
-
-        miniGameTimerScore.StopTimerForExternalCompletion();
-
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.CompleteMiniGame(
-                finalScore,
-                true
-            );
-        }
-        else
-        {
-            Debug.LogError(
-                "GameManagerDTC could not find the persistent GameManager."
-            );
-        }
+        miniGameTimerScore.CompleteTask();
     }
 }

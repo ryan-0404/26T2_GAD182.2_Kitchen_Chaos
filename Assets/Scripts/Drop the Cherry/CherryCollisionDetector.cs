@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class CherryCollisionDetector : MonoBehaviour
 {
-    [Header("Required References")]
-    [SerializeField] private CherryState cherryState;
-    [SerializeField] private CherryDrop cherryDrop;
-    [SerializeField] private CherryRespawn cherryRespawn;
+    [Header("Required Reference")]
+    [SerializeField] private CherryMovement cherryMovement;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (cherryState == null)
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log("Cherry collided with: " + other.gameObject.name);
+
+        if (cherryMovement == null)
         {
             return;
         }
 
-        if (!cherryState.IsFalling)
+        if (!cherryMovement.IsFalling)
         {
             return;
         }
@@ -35,19 +35,10 @@ public class CherryCollisionDetector : MonoBehaviour
 
         if (targetZone.IsMissZone)
         {
-            if (cherryRespawn != null)
-            {
-                cherryRespawn.BeginRespawn();
-            }
-
+            cherryMovement.CherryMissed();
             return;
         }
 
-        if (cherryDrop != null)
-        {
-            cherryDrop.LandOnCupcake(
-                targetZone.ScoreMultiplier
-            );
-        }
+        cherryMovement.LandOnCupcake();
     }
 }

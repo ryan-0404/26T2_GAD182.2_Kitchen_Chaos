@@ -8,27 +8,14 @@ public class CherryTargetZone : MonoBehaviour
         Miss
     }
 
-    [Header("Zone Settings")]
+    [Header("Zone Type")]
     [SerializeField] private TargetZoneType zoneType;
-
-    [Header("Cupcake Score")]
-    [SerializeField]
-    [Range(0f, 1f)]
-    private float scoreMultiplier = 1f;
 
     public bool IsMissZone
     {
         get
         {
             return zoneType == TargetZoneType.Miss;
-        }
-    }
-
-    public float ScoreMultiplier
-    {
-        get
-        {
-            return scoreMultiplier;
         }
     }
 }

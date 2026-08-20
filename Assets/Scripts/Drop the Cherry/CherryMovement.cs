@@ -1,150 +1,244 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class CherryMovement : MonoBehaviour
 {
+    private enum CherryState
+    {
+        Waiting,
+        MovingSideways,
+        Falling,
+        Respawning,
+        Finished
+    }
+
     [Header("Required References")]
-    [SerializeField] private CherryState cherryState;
+    [SerializeField] private GameManagerDTC gameManagerDTC;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform leftBoundary;
     [SerializeField] private Transform rightBoundary;
 
     [Header("Movement")]
     [SerializeField] private float horizontalSpeed = 4f;
-    [SerializeField] private bool beginMovingRight = true;
+    [SerializeField] private float fallingSpeed = 7f;
+
+    [Header("Respawn")]
+    [SerializeField] private float respawnDelay = 0.25f;
 
     private Rigidbody2D cherryRigidbody;
+    private Collider2D cherryCollider;
+    private SpriteRenderer cherryRenderer;
+
+    private CherryState currentState;
     private int horizontalDirection;
+
+    public bool CanDrop
+    {
+        get
+        {
+            return currentState == CherryState.MovingSideways;
+        }
+    }
+
+    public bool IsFalling
+    {
+        get
+        {
+            return currentState == CherryState.Falling;
+        }
+    }
 
     private void Awake()
     {
         cherryRigidbody = GetComponent<Rigidbody2D>();
+        cherryCollider = GetComponent<Collider2D>();
+        cherryRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        SetStartingDirection();
-        ResetToSpawn();
+        horizontalDirection = 1;
 
-        if (cherryState != null)
-        {
-            cherryState.SetPhase(CherryPhase.Waiting);
-        }
+        ResetCherry();
+
+        currentState = CherryState.Waiting;
     }
 
     private void FixedUpdate()
     {
-        if (cherryState == null)
+        if (gameManagerDTC != null &&
+            gameManagerDTC.GameCompleted)
         {
             return;
         }
 
-        if (!cherryState.CanMoveHorizontally)
+        if (currentState == CherryState.MovingSideways)
         {
-            return;
+            MoveSideways();
         }
-
-        MoveHorizontally();
+        else if (currentState == CherryState.Falling)
+        {
+            MoveDownward();
+        }
     }
 
-    public void BeginHorizontalMovement()
+    public void BeginMovement()
     {
-        if (cherryState == null)
+        if (currentState != CherryState.Waiting)
         {
             return;
         }
 
-        if (cherryState.CurrentPhase != CherryPhase.Waiting &&
-            cherryState.CurrentPhase != CherryPhase.Respawning)
-        {
-            return;
-        }
-
-        SetStartingDirection();
-
-        cherryState.SetPhase(
-            CherryPhase.MovingHorizontally
-        );
+        currentState = CherryState.MovingSideways;
     }
 
-    private void MoveHorizontally()
+    public void DropCherry()
     {
-        if (cherryRigidbody == null ||
-            leftBoundary == null ||
+        if (!CanDrop)
+        {
+            return;
+        }
+
+        currentState = CherryState.Falling;
+    }
+
+    private void MoveSideways()
+    {
+        if (leftBoundary == null ||
             rightBoundary == null)
         {
             return;
         }
 
-        Vector2 nextPosition = cherryRigidbody.position;
+        Vector2 position = cherryRigidbody.position;
 
-        nextPosition.x +=
+        position.x +=
             horizontalDirection *
             horizontalSpeed *
             Time.fixedDeltaTime;
 
-        if (nextPosition.x >= rightBoundary.position.x)
+        if (position.x >= rightBoundary.position.x)
         {
-            nextPosition.x = rightBoundary.position.x;
+            position.x = rightBoundary.position.x;
             horizontalDirection = -1;
         }
-        else if (nextPosition.x <= leftBoundary.position.x)
+        else if (position.x <= leftBoundary.position.x)
         {
-            nextPosition.x = leftBoundary.position.x;
+            position.x = leftBoundary.position.x;
             horizontalDirection = 1;
         }
 
-        cherryRigidbody.MovePosition(nextPosition);
+        cherryRigidbody.MovePosition(position);
     }
 
-    public void ResetToSpawn()
+    private void MoveDownward()
+    {
+        Vector2 position = cherryRigidbody.position;
+
+        position.y -=
+            fallingSpeed *
+            Time.fixedDeltaTime;
+
+        cherryRigidbody.MovePosition(position);
+    }
+
+    public void LandOnCupcake()
+    {
+        if (!IsFalling)
+        {
+            return;
+        }
+
+        currentState = CherryState.Finished;
+
+        StopMovement();
+
+        if (cherryCollider != null)
+        {
+            cherryCollider.enabled = false;
+        }
+
+        if (gameManagerDTC != null)
+        {
+            gameManagerDTC.CherryLandedOnCupcake();
+        }
+    }
+
+    public void CherryMissed()
+    {
+        if (!IsFalling)
+        {
+            return;
+        }
+
+        StartCoroutine(RespawnCherry());
+    }
+
+    private IEnumerator RespawnCherry()
+    {
+        currentState = CherryState.Respawning;
+
+        StopMovement();
+        SetCherryVisible(false);
+
+        yield return new WaitForSeconds(respawnDelay);
+
+        if (gameManagerDTC != null &&
+            gameManagerDTC.GameCompleted)
+        {
+            yield break;
+        }
+
+        ResetCherry();
+        SetCherryVisible(true);
+
+        currentState = CherryState.MovingSideways;
+    }
+
+    private void ResetCherry()
     {
         if (spawnPoint == null)
         {
             Debug.LogError(
-                "CherryMovement requires a Spawn Point reference.",
+                "Cherry spawn point has not been assigned.",
                 this
             );
 
             return;
         }
 
-        if (cherryRigidbody != null)
-        {
-            cherryRigidbody.position = spawnPoint.position;
-            StopRigidbodyMovement();
-        }
-        else
-        {
-            transform.position = spawnPoint.position;
-        }
+        cherryRigidbody.position = spawnPoint.position;
+        cherryRigidbody.rotation = 0f;
+
+        horizontalDirection = 1;
+
+        StopMovement();
     }
 
-    public void StopRigidbodyMovement()
+    public void StopMovement()
     {
         if (cherryRigidbody == null)
         {
             return;
         }
 
-#if UNITY_6000_0_OR_NEWER
         cherryRigidbody.linearVelocity = Vector2.zero;
-#else
-        cherryRigidbody.velocity = Vector2.zero;
-#endif
-
         cherryRigidbody.angularVelocity = 0f;
     }
 
-    private void SetStartingDirection()
+    private void SetCherryVisible(bool visible)
     {
-        if (beginMovingRight)
+        if (cherryRenderer != null)
         {
-            horizontalDirection = 1;
+            cherryRenderer.enabled = visible;
         }
-        else
+
+        if (cherryCollider != null)
         {
-            horizontalDirection = -1;
+            cherryCollider.enabled = visible;
         }
     }
 }

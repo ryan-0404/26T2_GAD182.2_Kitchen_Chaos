@@ -1,6 +1,6 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MiniGameTimerScore : MonoBehaviour
@@ -13,16 +13,40 @@ public class MiniGameTimerScore : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text gameNameText;
+    [SerializeField] private Button pauseButton;
 
     private float timeRemaining;
     private float elapsedTime;
+
     private bool timerStarted;
     private bool gameEnded;
+
+    public bool GameplayStarted
+    {
+        get
+        {
+            return timerStarted && !gameEnded;
+        }
+    }
+
+    public bool GameEnded
+    {
+        get
+        {
+            return gameEnded;
+        }
+    }
+
+    private void Awake()
+    {
+        HidePauseButton();
+    }
 
     private void Start()
     {
         timeRemaining = timeLimit;
         elapsedTime = 0f;
+
         timerStarted = false;
         gameEnded = false;
 
@@ -37,12 +61,21 @@ public class MiniGameTimerScore : MonoBehaviour
             gameNameText.gameObject.SetActive(true);
         }
 
+        HidePauseButton();
+
         StartCoroutine(StartGameAfterDelay());
     }
 
     private IEnumerator StartGameAfterDelay()
     {
-        yield return new WaitForSeconds(gameNameDisplayTime);
+        yield return new WaitForSeconds(
+            gameNameDisplayTime
+        );
+
+        if (gameEnded)
+        {
+            yield break;
+        }
 
         if (gameNameText != null)
         {
@@ -50,21 +83,33 @@ public class MiniGameTimerScore : MonoBehaviour
         }
 
         timerStarted = true;
+
         UpdateTimerUI();
+        ShowPauseButton();
     }
 
     private void Update()
     {
-        if (gameEnded || !timerStarted) return;
+        if (gameEnded)
+        {
+            return;
+        }
+
+        if (!timerStarted)
+        {
+            return;
+        }
 
         elapsedTime += Time.deltaTime;
         timeRemaining -= Time.deltaTime;
 
-        if (timeRemaining <= 0)
+        if (timeRemaining <= 0f)
         {
-            timeRemaining = 0;
+            timeRemaining = 0f;
+
             UpdateTimerUI();
             EndMiniGame(false);
+
             return;
         }
 
@@ -73,45 +118,106 @@ public class MiniGameTimerScore : MonoBehaviour
 
     public void CompleteTask()
     {
-        if (gameEnded || !timerStarted) return;
+        if (gameEnded || !timerStarted)
+        {
+            return;
+        }
 
         EndMiniGame(true);
     }
 
     public void FailTask()
     {
-        if (gameEnded || !timerStarted) return;
+        if (gameEnded || !timerStarted)
+        {
+            return;
+        }
 
         EndMiniGame(false);
     }
 
     private void EndMiniGame(bool succeeded)
     {
+        if (gameEnded)
+        {
+            return;
+        }
+
         gameEnded = true;
+        timerStarted = false;
 
-        int scoreEarned = succeeded ? CalculateScore() : 0;
+        HidePauseButton();
 
-        GameManager.Instance.CompleteMiniGame(scoreEarned, succeeded);
+        int scoreEarned = 0;
+
+        if (succeeded)
+        {
+            scoreEarned = CalculateScore();
+        }
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.CompleteMiniGame(
+                scoreEarned,
+                succeeded
+            );
+        }
+        else
+        {
+            Debug.LogError(
+                "MiniGameTimerScore could not find GameManager.Instance.",
+                this
+            );
+        }
     }
 
     private int CalculateScore()
     {
-        int secondCompleted = Mathf.CeilToInt(elapsedTime);
-        secondCompleted = Mathf.Clamp(secondCompleted, 1, 10);
+        int secondCompleted =
+            Mathf.CeilToInt(elapsedTime);
 
-        return 1100 - secondCompleted * 100;
+        secondCompleted =
+            Mathf.Clamp(
+                secondCompleted,
+                1,
+                10
+            );
+
+        return 1100 -
+               (secondCompleted * 100);
     }
 
     private void UpdateTimerUI()
     {
-        if (timerText != null)
+        if (timerText == null)
         {
-            timerText.text = "Time: " + Mathf.CeilToInt(timeRemaining);
+            return;
         }
+
+        timerText.text =
+            "Time: " +
+            Mathf.CeilToInt(timeRemaining);
     }
 
-    public int GetCurrentTimeScore()
+    private void HidePauseButton()
     {
-        return CalculateScore();
+        if (pauseButton == null)
+        {
+            return;
+        }
+
+        pauseButton.interactable = false;
+        pauseButton.gameObject.SetActive(false);
+    }
+
+    private void ShowPauseButton()
+    {
+        if (pauseButton == null)
+        {
+            return;
+        }
+
+        pauseButton.gameObject.SetActive(true);
+        pauseButton.interactable = true;
     }
 }
