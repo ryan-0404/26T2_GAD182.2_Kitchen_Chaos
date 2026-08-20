@@ -404,6 +404,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2893662543119337332, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2110708332}
+    - targetCorrespondingSourceObject: {fileID: 2893662543119337332, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110708333}
   m_SourcePrefab: {fileID: 100100000, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
 --- !u!1 &598630055
 GameObject:
@@ -1143,6 +1146,24 @@ MonoBehaviour:
   timerText: {fileID: 706721600}
   gameNameText: {fileID: 981219921}
   pauseButton: {fileID: 0}
+--- !u!114 &2110708333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110708330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa644f00592d9945aa775a32bb5f869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGameName: Match
+  timeLimit: 10
+  gameNameDisplayTime: 2
+  timerText: {fileID: 706721600}
+  gameNameText: {fileID: 981219921}
+  pauseButton: {fileID: 751975695}
 --- !u!1 &2123623324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5805703621330684168, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
