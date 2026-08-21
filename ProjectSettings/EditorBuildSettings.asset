@@ -8,15 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/Kitchen Chaos.unity
-    guid: 6dff130c11a8671449dfcf8c88714c75
   - enabled: 1
     path: Assets/Scenes/Bootstrap.unity
     guid: dfe3d27778348bb45bf482632b5d47f3
-  - enabled: 0
-    path: Assets/Scenes/DropTheCherry_.unity
-    guid: 191db0b98cd68e3439b6a57251eebde7
   - enabled: 0
     path: Assets/Scenes/Knead.unity
     guid: a67268f6752e70d40a471d5c91f4509b
@@ -26,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ResultScreen.unity
     guid: 21f62b4560833524f97f8d5b365a3ecd
-  - enabled: 0
-    path: Assets/Scenes/ShootTheSauce.unity
-    guid: f61a90b2bb0413048939133f87726e5e
   - enabled: 0
     path: Assets/Scenes/Assets.unity
     guid: b9ddc2ee23235574daaca7b2ae33b55c
@@ -46,7 +37,10 @@ EditorBuildSettings:
     guid: f43cfcd67576dcd4d883d0609fcd47a0
   - enabled: 1
     path: Assets/Scenes/DroptheCherry.unity
-    guid: 77a2b308d72d0a64f9f5383fbff8d881
+    guid: 2bfc498ac7669da4ebb552d151b3d4ab
+  - enabled: 1
+    path: Assets/Scenes/Shoottha Sauce.unity
+    guid: 43a2a409c8862c448bfe9300dbe7e229
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

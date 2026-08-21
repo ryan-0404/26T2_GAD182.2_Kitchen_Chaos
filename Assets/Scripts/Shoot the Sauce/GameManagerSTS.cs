@@ -6,7 +6,7 @@ public class GameManagerSTS : MonoBehaviour
     [SerializeField] private MiniGameTimerScore miniGameTimerScore;
 
     [Header("Shoot the Sauce")]
-    [SerializeField] private PizzaController pizzaController;
+    [SerializeField] private PizzaMovement pizzaMovement;
 
     private bool gameCompleted;
 
@@ -15,6 +15,24 @@ public class GameManagerSTS : MonoBehaviour
         get
         {
             return gameCompleted;
+        }
+    }
+
+    public bool CanPlay
+    {
+        get
+        {
+            if (gameCompleted)
+            {
+                return false;
+            }
+
+            if (miniGameTimerScore == null)
+            {
+                return false;
+            }
+
+            return miniGameTimerScore.GameplayStarted;
         }
     }
 
@@ -32,9 +50,9 @@ public class GameManagerSTS : MonoBehaviour
 
         gameCompleted = true;
 
-        if (pizzaController != null)
+        if (pizzaMovement != null)
         {
-            pizzaController.FinishGame();
+            pizzaMovement.StopMovement();
         }
 
         if (miniGameTimerScore == null)
@@ -47,10 +65,26 @@ public class GameManagerSTS : MonoBehaviour
             return;
         }
 
-        /*
-         * This keeps Shoot the Sauce compatible with the
-         * existing Food Frenzy score and transition system.
-         */
         miniGameTimerScore.CompleteTask();
+    }
+
+    public void PizzaMissed()
+    {
+        if (gameCompleted)
+        {
+            return;
+        }
+
+        if (pizzaMovement == null)
+        {
+            Debug.LogError(
+                "PizzaMovement has not been assigned to GameManagerSTS.",
+                this
+            );
+
+            return;
+        }
+
+        pizzaMovement.ResetPizza();
     }
 }

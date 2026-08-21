@@ -1,62 +1,21 @@
 using UnityEngine;
 
-public enum PizzaTargetType
-{
-    Conveyor,
-    MissZone
-}
-
 public class PizzaTargetZone : MonoBehaviour
 {
+    public enum TargetZoneType
+    {
+        Conveyor,
+        MissZone
+    }
+
     [Header("Target Type")]
-    [SerializeField] private PizzaTargetType targetType;
+    [SerializeField] private TargetZoneType targetType;
 
-    [Header("Conveyor Reference")]
-    [Tooltip(
-        "Required only when Target Type is Conveyor."
-    )]
-    [SerializeField] private ConveyorMover conveyorMover;
-
-    public void ProcessPizzaCollision(
-        PizzaController pizzaController
-    )
+    public bool IsMissZone
     {
-        if (pizzaController == null)
+        get
         {
-            return;
+            return targetType == TargetZoneType.MissZone;
         }
-
-        if (targetType == PizzaTargetType.Conveyor)
-        {
-            ProcessConveyorCollision(pizzaController);
-        }
-        else
-        {
-            ProcessMissCollision(pizzaController);
-        }
-    }
-
-    private void ProcessConveyorCollision(
-        PizzaController pizzaController
-    )
-    {
-        if (conveyorMover == null)
-        {
-            Debug.LogError(
-                "A Conveyor target zone requires a ConveyorMover reference.",
-                this
-            );
-
-            return;
-        }
-
-        pizzaController.LandOnConveyor(conveyorMover);
-    }
-
-    private void ProcessMissCollision(
-        PizzaController pizzaController
-    )
-    {
-        pizzaController.HitMissZone();
     }
 }

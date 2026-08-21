@@ -2,17 +2,28 @@ using UnityEngine;
 
 public class PizzaCollisionDetector : MonoBehaviour
 {
-    [Header("Required Reference")]
-    [SerializeField] private PizzaController pizzaController;
+    [Header("Required References")]
+    [SerializeField] private PizzaMovement pizzaMovement;
+    [SerializeField] private GameManagerSTS gameManagerSTS;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (pizzaController == null)
+        if (pizzaMovement == null)
         {
             return;
         }
 
-        if (pizzaController.CurrentState != PizzaState.FlyingUpward)
+        if (gameManagerSTS == null)
+        {
+            return;
+        }
+
+        if (gameManagerSTS.GameCompleted)
+        {
+            return;
+        }
+
+        if (!pizzaMovement.HasBeenShot)
         {
             return;
         }
@@ -31,6 +42,12 @@ public class PizzaCollisionDetector : MonoBehaviour
             return;
         }
 
-        targetZone.ProcessPizzaCollision(pizzaController);
+        if (targetZone.IsMissZone)
+        {
+            gameManagerSTS.PizzaMissed();
+            return;
+        }
+
+        gameManagerSTS.CompleteMiniGame();
     }
 }

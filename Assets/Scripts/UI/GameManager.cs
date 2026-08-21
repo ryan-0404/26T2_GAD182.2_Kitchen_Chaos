@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            SceneManager.LoadScene("ResultsScreen");
+            SceneManager.LoadScene("MainMenu");
             return;
         }
 
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentMiniGameIndex >= miniGameScenes.Length)
         {
-            SceneManager.LoadScene("ResultsScreen");
+            SceneManager.LoadScene("MainMenu");
             return;
         }
 
