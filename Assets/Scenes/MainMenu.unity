@@ -368,7 +368,7 @@ MonoBehaviour:
   miniGameScenes:
   - EatTheCake
   - SetTheTable
-  - ShootTheSauce
+  - DroptheCherry
 --- !u!4 &162460796
 Transform:
   m_ObjectHideFlags: 0

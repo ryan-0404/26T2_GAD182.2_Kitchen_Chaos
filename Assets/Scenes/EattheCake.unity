@@ -629,9 +629,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2893662543119337332, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2110708332}
-    - targetCorrespondingSourceObject: {fileID: 2893662543119337332, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2110708334}
   m_SourcePrefab: {fileID: 100100000, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
 --- !u!114 &550637900 stripped
@@ -764,7 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatProgress: 0
   gameActive: 0
-  miniGameTimerScore: {fileID: 2110708332}
+  miniGameTimerScore: {fileID: 2110708334}
   right: {fileID: 141369924}
   left: {fileID: 68662805}
   cakes:
@@ -1228,18 +1225,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2893662543119337332, guid: b05ffc4d0e5cf1f49bc4a1998a7c93b0, type: 3}
   m_PrefabInstance: {fileID: 526122669}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2110708332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110708330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27004d245748522478a25afb5c5665fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2110708334
 MonoBehaviour:
   m_ObjectHideFlags: 0

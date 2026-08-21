@@ -1,77 +1,95 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class PizzaInput : MonoBehaviour
+public class ShootInput : MonoBehaviour
 {
-    [Header("Required Reference")]
-    [SerializeField] private PizzaController pizzaController;
+    [Header("Required References")]
+    [SerializeField] private PizzaMovement pizzaMovement;
+    [SerializeField] private GameManagerSTS gameManagerSTS;
+    [SerializeField] private MiniGameTimerScore miniGameTimerScore;
 
-    [Header("Input Delay")]
-    [SerializeField] private float inputDelay = 2f;
-
-    private bool inputEnabled;
+    private bool gameplayActivated;
 
     private void Start()
     {
-        inputEnabled = false;
-
-        StartCoroutine(EnableInputRoutine());
+        gameplayActivated = false;
     }
 
     private void Update()
     {
-        if (!inputEnabled)
+        ActivateGameplayWhenReady();
+
+        if (!gameplayActivated)
         {
             return;
         }
 
-        if (pizzaController == null)
+        if (pizzaMovement == null ||
+            gameManagerSTS == null)
         {
             return;
         }
 
-        if (!pizzaController.CanShoot)
+        if (!gameManagerSTS.CanPlay)
         {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            pizzaController.Shoot();
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (IsPointerOverUI())
-            {
-                return;
-            }
-
-            pizzaController.Shoot();
-        }
+        ReadHorizontalInput();
+        ReadLaunchInput();
     }
 
-    private IEnumerator EnableInputRoutine()
+    private void ActivateGameplayWhenReady()
     {
-        yield return new WaitForSeconds(inputDelay);
-
-        inputEnabled = true;
-    }
-
-    private bool IsPointerOverUI()
-    {
-        if (EventSystem.current == null)
+        if (gameplayActivated)
         {
-            return false;
+            return;
         }
 
-        return EventSystem.current.IsPointerOverGameObject();
+        if (miniGameTimerScore == null)
+        {
+            return;
+        }
+
+        if (!miniGameTimerScore.GameplayStarted)
+        {
+            return;
+        }
+
+        gameplayActivated = true;
     }
 
-    public void DisableInput()
+    private void ReadHorizontalInput()
     {
-        inputEnabled = false;
+        if (Keyboard.current == null)
+        {
+            return;
+        }
+
+        bool leftPressed =
+            Keyboard.current.leftArrowKey.isPressed;
+
+        bool rightPressed =
+            Keyboard.current.rightArrowKey.isPressed;
+
+        pizzaMovement.SetHorizontalInput(
+            leftPressed,
+            rightPressed
+        );
+    }
+
+    private void ReadLaunchInput()
+    {
+        if (Keyboard.current == null)
+        {
+            return;
+        }
+
+        if (!Keyboard.current.upArrowKey.wasPressedThisFrame)
+        {
+            return;
+        }
+
+        pizzaMovement.Launch();
     }
 }
