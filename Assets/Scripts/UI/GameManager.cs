@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentMiniGameIndex >= miniGameScenes.Length)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("ScoreEntryScreen");
             return;
         }
 
@@ -85,5 +85,10 @@ public class GameManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OpenHighScores()
+    {
+        SceneManager.LoadScene("HighScoreScreen");
     }
 }

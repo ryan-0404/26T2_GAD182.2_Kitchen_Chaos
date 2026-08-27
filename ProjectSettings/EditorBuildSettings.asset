@@ -41,6 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shoottha Sauce.unity
     guid: 43a2a409c8862c448bfe9300dbe7e229
+  - enabled: 1
+    path: Assets/Scenes/ScoreEntryScreen.unity
+    guid: c35a5a4e04d550446a05bfdc21accf63
+  - enabled: 1
+    path: Assets/Scenes/HighScoreScreen.unity
+    guid: f753c9e8541696e4c855f73cf6e74968
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

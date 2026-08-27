@@ -6,5 +6,9 @@ public class MainMenuUI : MonoBehaviour
     {
         GameManager.Instance.StartNewRun();
     }
+
+    public void OpenHighScores()
+    {
+        GameManager.Instance.OpenHighScores();
+    }
 }
-   
