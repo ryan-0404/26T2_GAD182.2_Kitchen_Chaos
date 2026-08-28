@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miniGameName: Mini Game
+  instruction: 
   timeLimit: 10
-  gameNameDisplayTime: 2
+  gameNameDisplayTime: 4
   timerText: {fileID: 0}
   gameNameText: {fileID: 0}
+  instructionText: {fileID: 0}
   pauseButton: {fileID: 0}
 --- !u!1 &4061861902801867472
 GameObject:

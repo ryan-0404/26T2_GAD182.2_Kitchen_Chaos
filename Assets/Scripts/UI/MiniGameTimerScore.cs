@@ -7,12 +7,14 @@ public class MiniGameTimerScore : MonoBehaviour
 {
     [Header("Mini Game Settings")]
     [SerializeField] private string miniGameName = "Mini Game";
+    [SerializeField] private string instruction = "";
     [SerializeField] private float timeLimit = 10f;
     [SerializeField] private float gameNameDisplayTime = 1f;
 
     [Header("UI References")]
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text gameNameText;
+    [SerializeField] private TMP_Text instructionText;
     [SerializeField] private Button pauseButton;
 
     private float timeRemaining;
@@ -61,6 +63,12 @@ public class MiniGameTimerScore : MonoBehaviour
             gameNameText.gameObject.SetActive(true);
         }
 
+        if (instructionText != null)
+        {
+            instructionText.text = instruction;
+            instructionText.gameObject.SetActive(true);
+        }
+
         HidePauseButton();
 
         StartCoroutine(StartGameAfterDelay());
@@ -68,9 +76,7 @@ public class MiniGameTimerScore : MonoBehaviour
 
     private IEnumerator StartGameAfterDelay()
     {
-        yield return new WaitForSeconds(
-            gameNameDisplayTime
-        );
+        yield return new WaitForSeconds(gameNameDisplayTime);
 
         if (gameEnded)
         {
@@ -80,6 +86,11 @@ public class MiniGameTimerScore : MonoBehaviour
         if (gameNameText != null)
         {
             gameNameText.gameObject.SetActive(false);
+        }
+
+        if (instructionText != null)
+        {
+            instructionText.gameObject.SetActive(false);
         }
 
         timerStarted = true;
