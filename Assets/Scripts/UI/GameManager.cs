@@ -91,4 +91,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("HighScoreScreen");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+
+        Debug.Log("Game Quit");
+    }
 }
