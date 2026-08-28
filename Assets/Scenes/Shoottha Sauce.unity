@@ -1525,6 +1525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniGameTimerScore: {fileID: 526122671}
   pizzaMovement: {fileID: 1662457422}
+  shootTargetSelector: {fileID: 1365540016}
+  pizzasRequired: 3
 --- !u!1 &889435427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3116,7 +3118,7 @@ MonoBehaviour:
   leftLimit: -7
   rightLimit: 7
   upwardSpeed: 25
-  topMissLimit: 6.5
+  topLimit: 6.5
 --- !u!114 &1662457423
 MonoBehaviour:
   m_ObjectHideFlags: 0

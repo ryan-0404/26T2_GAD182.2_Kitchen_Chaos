@@ -48,6 +48,11 @@ public class PizzaCollisionDetector : MonoBehaviour
             return;
         }
 
-        gameManagerSTS.CompleteMiniGame();
+        if (pizzaMovement.HasLandedSuccessfully)
+        {
+            return;
+        }
+
+        gameManagerSTS.PizzaLandedSuccessfully();
     }
 }

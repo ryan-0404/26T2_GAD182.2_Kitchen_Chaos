@@ -1,17 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using System.Collections;
 
 public class EatCake : MonoBehaviour
 {
     [SerializeField]
     private int eatProgress = 0;
+
     private bool leftInput = false;
     private bool rightInput = false;
+
     [SerializeField]
-    private bool gameActive=false;
-    public MiniGameTimerScore  miniGameTimerScore;
+    private bool gameActive = false;
+
+    public MiniGameTimerScore miniGameTimerScore;
+
     public GameObject right;
     public GameObject left;
 
@@ -24,35 +26,48 @@ public class EatCake : MonoBehaviour
     public AudioSource winSource;
     public AudioClip winSound;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         left.SetActive(false);
         right.SetActive(false);
-        StartCoroutine(StartGameAfterDelay());
+
+        gameActive = false;
+        leftInput = false;
+        rightInput = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // controls alternate between left and right arrow key
-        if (Keyboard.current.leftArrowKey.wasReleasedThisFrame && leftInput == true && gameActive == true)
+        if (gameActive == false &&
+            miniGameTimerScore != null &&
+            miniGameTimerScore.GameplayStarted == true)
         {
-            eatProgress = eatProgress + 1;
-            leftInput = false;
-            rightInput = true;
-            audioSource.PlayOneShot(sound);
-            //Debug.Log("input works");
-
+            gameActive = true;
+            leftInput = true;
         }
 
-        if (Keyboard.current.rightArrowKey.wasReleasedThisFrame && rightInput == true && gameActive == true)
+        if (Keyboard.current.leftArrowKey.wasReleasedThisFrame &&
+            leftInput == true &&
+            gameActive == true)
         {
             eatProgress = eatProgress + 1;
+
+            leftInput = false;
+            rightInput = true;
+
+            audioSource.PlayOneShot(sound);
+        }
+
+        if (Keyboard.current.rightArrowKey.wasReleasedThisFrame &&
+            rightInput == true &&
+            gameActive == true)
+        {
+            eatProgress = eatProgress + 1;
+
             leftInput = true;
             rightInput = false;
+
             audioSource.PlayOneShot(sound);
-            //Debug.Log("input works");
         }
 
         if (eatProgress == 10)
@@ -72,47 +87,40 @@ public class EatCake : MonoBehaviour
             spriteRenderer.sprite = cakes[3];
         }
 
-
-        // end of minigame
-        if (eatProgress >= 50 && gameActive == true)
-        //if (eatProgress >= 5 && gameActive == true)  //low score for testing
+        if (eatProgress >= 50 &&
+            gameActive == true)
         {
             spriteRenderer.sprite = cakes[4];
+
             winSource.PlayOneShot(winSound);
-            Debug.Log(" ate the cake");
+
+            Debug.Log("ate the cake");
+
             rightInput = false;
             leftInput = false;
             gameActive = false;
+
             miniGameTimerScore.CompleteTask();
         }
 
-        if (leftInput == true)
+        if (leftInput == true &&
+            gameActive == true)
         {
             left.SetActive(true);
         }
-        else if (leftInput == false)
+        else
         {
             left.SetActive(false);
         }
 
-        if (rightInput == true) 
+        if (rightInput == true &&
+            gameActive == true)
         {
             right.SetActive(true);
         }
-        else if (rightInput == false)
+        else
         {
             right.SetActive(false);
         }
-
-
     }
-    private IEnumerator StartGameAfterDelay()
-    {
-        yield return new WaitForSeconds(1.5f);
-        gameActive = true;
-        leftInput = true;
-    
-    }
-
-
 }
