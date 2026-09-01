@@ -7,7 +7,12 @@ public class GameManagerSTS : MonoBehaviour
 
     [Header("Shoot the Sauce")]
     [SerializeField] private PizzaMovement pizzaMovement;
+    [SerializeField] private ShootTargetSelector shootTargetSelector;
 
+    [Header("Win Condition")]
+    [SerializeField] private int pizzasRequired = 3;
+
+    private int successfulPizzas;
     private bool gameCompleted;
 
     public bool GameCompleted
@@ -38,7 +43,69 @@ public class GameManagerSTS : MonoBehaviour
 
     private void Awake()
     {
+        successfulPizzas = 0;
         gameCompleted = false;
+    }
+
+    public void PizzaLandedSuccessfully()
+    {
+        if (gameCompleted)
+        {
+            return;
+        }
+
+        if (pizzaMovement == null)
+        {
+            return;
+        }
+
+        pizzaMovement.MarkSuccessfulLanding();
+    }
+
+    public void PizzaExitedAfterSuccess()
+    {
+        if (gameCompleted)
+        {
+            return;
+        }
+
+        successfulPizzas++;
+
+        if (successfulPizzas >= pizzasRequired)
+        {
+            CompleteMiniGame();
+            return;
+        }
+
+        if (shootTargetSelector != null)
+        {
+            shootTargetSelector.SelectTargetLane();
+        }
+
+        if (pizzaMovement != null)
+        {
+            pizzaMovement.ResetPizza();
+        }
+    }
+
+    public void PizzaMissed()
+    {
+        if (gameCompleted)
+        {
+            return;
+        }
+
+        if (pizzaMovement == null)
+        {
+            Debug.LogError(
+                "PizzaMovement has not been assigned to GameManagerSTS.",
+                this
+            );
+
+            return;
+        }
+
+        pizzaMovement.ResetPizza();
     }
 
     public void CompleteMiniGame()
@@ -68,23 +135,5 @@ public class GameManagerSTS : MonoBehaviour
         miniGameTimerScore.CompleteTask();
     }
 
-    public void PizzaMissed()
-    {
-        if (gameCompleted)
-        {
-            return;
-        }
 
-        if (pizzaMovement == null)
-        {
-            Debug.LogError(
-                "PizzaMovement has not been assigned to GameManagerSTS.",
-                this
-            );
-
-            return;
-        }
-
-        pizzaMovement.ResetPizza();
-    }
 }

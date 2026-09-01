@@ -15,13 +15,15 @@ public class PizzaMovement : MonoBehaviour
     [Header("Vertical Movement")]
     [SerializeField] private float upwardSpeed = 10f;
 
-    [Header("Screen Boundary")]
-    [SerializeField] private float topMissLimit = 6.5f;
+    [Header("Off Screen Detection")]
+    [SerializeField] private float topLimit = 6.5f;
 
     private Rigidbody2D pizzaRigidbody;
 
     private bool movingHorizontally;
     private bool hasBeenShot;
+    private bool hasLandedSuccessfully;
+
     private bool movingLeft;
     private bool movingRight;
 
@@ -30,6 +32,14 @@ public class PizzaMovement : MonoBehaviour
         get
         {
             return hasBeenShot;
+        }
+    }
+
+    public bool HasLandedSuccessfully
+    {
+        get
+        {
+            return hasLandedSuccessfully;
         }
     }
 
@@ -67,9 +77,16 @@ public class PizzaMovement : MonoBehaviour
         }
 
         if (hasBeenShot &&
-            transform.position.y >= topMissLimit)
+            transform.position.y >= topLimit)
         {
-            gameManagerSTS.PizzaMissed();
+            if (hasLandedSuccessfully)
+            {
+                gameManagerSTS.PizzaExitedAfterSuccess();
+            }
+            else
+            {
+                gameManagerSTS.PizzaMissed();
+            }
         }
     }
 
@@ -118,8 +135,7 @@ public class PizzaMovement : MonoBehaviour
             direction += 1f;
         }
 
-        Vector2 position =
-            pizzaRigidbody.position;
+        Vector2 position = pizzaRigidbody.position;
 
         position.x +=
             direction *
@@ -156,14 +172,23 @@ public class PizzaMovement : MonoBehaviour
 
     private void MoveUpward()
     {
-        Vector2 position =
-            pizzaRigidbody.position;
+        Vector2 position = pizzaRigidbody.position;
 
         position.y +=
             upwardSpeed *
             Time.fixedDeltaTime;
 
         pizzaRigidbody.MovePosition(position);
+    }
+
+    public void MarkSuccessfulLanding()
+    {
+        if (!hasBeenShot)
+        {
+            return;
+        }
+
+        hasLandedSuccessfully = true;
     }
 
     public void ResetPizza()
@@ -184,6 +209,8 @@ public class PizzaMovement : MonoBehaviour
         pizzaRigidbody.rotation = 0f;
 
         hasBeenShot = false;
+        hasLandedSuccessfully = false;
+
         movingHorizontally = true;
 
         movingLeft = false;
@@ -193,6 +220,7 @@ public class PizzaMovement : MonoBehaviour
     public void StopMovement()
     {
         hasBeenShot = false;
+        hasLandedSuccessfully = false;
         movingHorizontally = false;
 
         movingLeft = false;

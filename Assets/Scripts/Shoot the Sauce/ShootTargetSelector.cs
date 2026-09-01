@@ -33,9 +33,32 @@ public class ShootTargetSelector : MonoBehaviour
             return;
         }
 
-        selectedLaneIndex = ChooseLaneIndex();
+        int previousLaneIndex =
+            selectedLaneIndex;
 
-        for (int i = 0; i < targetLanes.Length; i++)
+        if (forcedLaneIndex >= 0 &&
+            forcedLaneIndex < targetLanes.Length)
+        {
+            selectedLaneIndex =
+                forcedLaneIndex;
+        }
+        else
+        {
+            do
+            {
+                selectedLaneIndex =
+                    Random.Range(
+                        0,
+                        targetLanes.Length
+                    );
+            }
+            while (selectedLaneIndex ==
+                   previousLaneIndex);
+        }
+
+        for (int i = 0;
+             i < targetLanes.Length;
+             i++)
         {
             bool isSelectedLane =
                 i == selectedLaneIndex;
@@ -46,23 +69,11 @@ public class ShootTargetSelector : MonoBehaviour
         }
 
         Debug.Log(
-            "Shoot the Sauce success lane: " +
+            "Previous lane: " +
+            previousLaneIndex +
+            " | New lane: " +
             selectedLaneIndex,
             this
-        );
-    }
-
-    private int ChooseLaneIndex()
-    {
-        if (forcedLaneIndex >= 0 &&
-            forcedLaneIndex < targetLanes.Length)
-        {
-            return forcedLaneIndex;
-        }
-
-        return Random.Range(
-            0,
-            targetLanes.Length
         );
     }
 
@@ -88,7 +99,9 @@ public class ShootTargetSelector : MonoBehaviour
             return false;
         }
 
-        for (int i = 0; i < targetLanes.Length; i++)
+        for (int i = 0;
+             i < targetLanes.Length;
+             i++)
         {
             if (targetLanes[i] == null)
             {
