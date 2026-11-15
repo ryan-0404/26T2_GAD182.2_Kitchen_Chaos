@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenPauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2341034355808941911, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3087083922743392002, guid: 0f19e3b9600156b4c9a6b00cf25a0d1c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -371,6 +371,7 @@ MonoBehaviour:
   - SetTheTable
   - DroptheCherry
   - Shoottha Sauce
+  - SlicethePizza
 --- !u!4 &162460796
 Transform:
   m_ObjectHideFlags: 0
