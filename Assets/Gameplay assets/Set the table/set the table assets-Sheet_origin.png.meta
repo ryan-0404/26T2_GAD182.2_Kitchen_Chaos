@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: c80f69932d1a3c34691ef4f753b04403
+guid: e0b649ae2cd1f354c814546458c79412
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 90284905470945378
-    second: set the table assets silloette-Sheet_0
+      213: 9163934927491369166
+    second: set the table assets-Sheet_0
   - first:
-      213: -9149513924002733940
-    second: set the table assets silloette-Sheet_1
+      213: 4791827544723729446
+    second: set the table assets-Sheet_1
   - first:
-      213: -2071505087940442359
-    second: set the table assets silloette-Sheet_2
+      213: 5378393192645372104
+    second: set the table assets-Sheet_2
   - first:
-      213: 5489309719909821390
-    second: set the table assets silloette-Sheet_3
+      213: 7736287245987293142
+    second: set the table assets-Sheet_3
   - first:
-      213: 5970714695899516870
-    second: set the table assets silloette-Sheet_4
+      213: 6785566868356976069
+    second: set the table assets-Sheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,11 +108,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: set the table assets silloette-Sheet_0
+      name: set the table assets-Sheet_0
       rect:
         serializedVersion: 2
         x: 169
@@ -127,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 268ec27a4a1c04100800000000000000
-      internalID: 90284905470945378
+      spriteID: ec80be19346dc2f70800000000000000
+      internalID: 9163934927491369166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: set the table assets silloette-Sheet_1
+      name: set the table assets-Sheet_1
       rect:
         serializedVersion: 2
         x: 1473
@@ -149,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c80a354ff85660180800000000000000
-      internalID: -9149513924002733940
+      spriteID: 62ca03483cdff7240800000000000000
+      internalID: 4791827544723729446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: set the table assets silloette-Sheet_2
+      name: set the table assets-Sheet_2
       rect:
         serializedVersion: 2
-        x: 204
+        x: 203
         y: 267
-        width: 92
-        height: 632
+        width: 95
+        height: 633
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90745ea09198043e0800000000000000
-      internalID: -2071505087940442359
+      spriteID: 8c8a10edc14e3aa40800000000000000
+      internalID: 5378393192645372104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: set the table assets silloette-Sheet_3
+      name: set the table assets-Sheet_3
       rect:
         serializedVersion: 2
         x: 477
-        y: 292
-        width: 130
-        height: 612
+        y: 288
+        width: 134
+        height: 620
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecbe25d4b12fd2c40800000000000000
-      internalID: 5489309719909821390
+      spriteID: 6d72579f240dc5b60800000000000000
+      internalID: 7736287245987293142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: set the table assets silloette-Sheet_4
+      name: set the table assets-Sheet_4
       rect:
         serializedVersion: 2
-        x: 926
+        x: 922
         y: 298
-        width: 152
-        height: 465
+        width: 156
+        height: 478
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6cf8b48b16d3cd250800000000000000
-      internalID: 5970714695899516870
+      spriteID: 5cdc3148d1d2b2e50800000000000000
+      internalID: 6785566868356976069
       vertices: []
       indices: 
       edges: []
@@ -235,11 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      set the table assets silloette-Sheet_0: 90284905470945378
-      set the table assets silloette-Sheet_1: -9149513924002733940
-      set the table assets silloette-Sheet_2: -2071505087940442359
-      set the table assets silloette-Sheet_3: 5489309719909821390
-      set the table assets silloette-Sheet_4: 5970714695899516870
+      set the table assets-Sheet_0: 9163934927491369166
+      set the table assets-Sheet_1: 4791827544723729446
+      set the table assets-Sheet_2: 5378393192645372104
+      set the table assets-Sheet_3: 7736287245987293142
+      set the table assets-Sheet_4: 6785566868356976069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 598630057}
   - component: {fileID: 598630056}
   m_Layer: 0
-  m_Name: cut the pizza_set the table background (1)_0
+  m_Name: table background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,15 +544,15 @@ MonoBehaviour:
   - {fileID: 1054588871}
   - {fileID: 1399304950}
   shadows:
-  - {fileID: 4236074853787058440, guid: 65d3c17fbd6e5cc48896e646e40c61d0, type: 3}
-  - {fileID: 41206667053370533, guid: 655efa61532b5f649a93a75c5557c4c8, type: 3}
-  - {fileID: 5381100213804011156, guid: d496366f2ddabe142abe37a9ebf151f6, type: 3}
-  - {fileID: 4307362493499491376, guid: bd663a977b11dd0469f87c792877505b, type: 3}
+  - {fileID: 5648359009867711815, guid: eee929d9e21b9a947b3b8b8b72c41194, type: 3}
+  - {fileID: 4790155844655761552, guid: a0f5e8a25323fbd4e8e5b9192c67f7ae, type: 3}
+  - {fileID: 4073013377649273779, guid: 7a39331b7e6b4e941a30e7ac87d82a03, type: 3}
+  - {fileID: 1748509628886048021, guid: b291c71631b520d4e9bc1e3b131d88c3, type: 3}
   prefab:
-  - {fileID: 1529340861186614083, guid: b7caeed288c77054aba854c7b6c029ff, type: 3}
-  - {fileID: 3735349774151815071, guid: 5322316eeb9564041b774ad52f783ad9, type: 3}
-  - {fileID: 3138295229606172408, guid: 91d02373ad2a3db41a2d41bec1386690, type: 3}
-  - {fileID: 560991756831259347, guid: 765b37bc797078f4cb494dac33847438, type: 3}
+  - {fileID: 5648359009867711815, guid: 197236ce7878f0744af55fcb84b70279, type: 3}
+  - {fileID: 4790155844655761552, guid: 1c5e08323fba5fd4aacd2be668b7a7ff, type: 3}
+  - {fileID: 4073013377649273779, guid: aa336356d555e784a9a12023db5d1d4e, type: 3}
+  - {fileID: 1748509628886048021, guid: d872d0426f73b494ea4847ac6844a0f2, type: 3}
   Item: {fileID: 0}
   Shadow: {fileID: 0}
   currentItem: {fileID: 0}

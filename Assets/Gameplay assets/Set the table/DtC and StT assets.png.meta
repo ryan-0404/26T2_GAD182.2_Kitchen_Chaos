@@ -1,0 +1,1018 @@
+fileFormatVersion: 2
+guid: b71e6e27e802d7247b20299555702347
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2688642680025703114
+    second: Cupcake, Cherry and Silver Cutlery Set_0
+  - first:
+      213: 8349178668375744236
+    second: Cupcake, Cherry and Silver Cutlery Set_1
+  - first:
+      213: 4052035407709208304
+    second: Cupcake, Cherry and Silver Cutlery Set_2
+  - first:
+      213: 6548032743897822276
+    second: Cupcake, Cherry and Silver Cutlery Set_3
+  - first:
+      213: -1050951306542017900
+    second: Cupcake, Cherry and Silver Cutlery Set_4
+  - first:
+      213: -6821359083508130135
+    second: Cupcake, Cherry and Silver Cutlery Set_5
+  - first:
+      213: -7717745268043506447
+    second: Cupcake, Cherry and Silver Cutlery Set_6
+  - first:
+      213: 6467445400963902125
+    second: Cupcake, Cherry and Silver Cutlery Set_7
+  - first:
+      213: -4859256404832886280
+    second: Cupcake, Cherry and Silver Cutlery Set_8
+  - first:
+      213: 1478073921639245570
+    second: Cupcake, Cherry and Silver Cutlery Set_9
+  - first:
+      213: 2445414657871252634
+    second: Cupcake, Cherry and Silver Cutlery Set_10
+  - first:
+      213: 4359456667943973461
+    second: Cupcake, Cherry and Silver Cutlery Set_11
+  - first:
+      213: -1068377783154802390
+    second: Cupcake, Cherry and Silver Cutlery Set_12
+  - first:
+      213: 5904376316939184214
+    second: Cupcake, Cherry and Silver Cutlery Set_13
+  - first:
+      213: 7210221142477233535
+    second: Cupcake, Cherry and Silver Cutlery Set_14
+  - first:
+      213: 4726502841476997234
+    second: Cupcake, Cherry and Silver Cutlery Set_15
+  - first:
+      213: -8955535300971355008
+    second: Cupcake, Cherry and Silver Cutlery Set_16
+  - first:
+      213: -8749982670407840621
+    second: Cupcake, Cherry and Silver Cutlery Set_17
+  - first:
+      213: -661465976630831784
+    second: Cupcake, Cherry and Silver Cutlery Set_18
+  - first:
+      213: -718488614335141826
+    second: Cupcake, Cherry and Silver Cutlery Set_19
+  - first:
+      213: 2328074806781417936
+    second: Cupcake, Cherry and Silver Cutlery Set_20
+  - first:
+      213: 4894564714419913302
+    second: Cupcake, Cherry and Silver Cutlery Set_21
+  - first:
+      213: -3408619311381957856
+    second: Cupcake, Cherry and Silver Cutlery Set_22
+  - first:
+      213: -8840947056384529641
+    second: Cupcake, Cherry and Silver Cutlery Set_23
+  - first:
+      213: -3949744006550844673
+    second: Cupcake, Cherry and Silver Cutlery Set_24
+  - first:
+      213: -3610717278048904915
+    second: Cupcake, Cherry and Silver Cutlery Set_25
+  - first:
+      213: -4661642357601942707
+    second: Cupcake, Cherry and Silver Cutlery Set_26
+  - first:
+      213: -7923414057636578837
+    second: Cupcake, Cherry and Silver Cutlery Set_27
+  - first:
+      213: 2084526545555595701
+    second: Cupcake, Cherry and Silver Cutlery Set_28
+  - first:
+      213: -1797949451544330224
+    second: Cupcake, Cherry and Silver Cutlery Set_29
+  - first:
+      213: -3479761475342691913
+    second: Cupcake, Cherry and Silver Cutlery Set_30
+  - first:
+      213: -5980804852778085706
+    second: Cupcake, Cherry and Silver Cutlery Set_31
+  - first:
+      213: -8611510185393367444
+    second: Cupcake, Cherry and Silver Cutlery Set_32
+  - first:
+      213: -2967245198968356528
+    second: Cupcake, Cherry and Silver Cutlery Set_33
+  - first:
+      213: -7165145126619139129
+    second: Cupcake, Cherry and Silver Cutlery Set_34
+  - first:
+      213: 4205530106922533913
+    second: Cupcake, Cherry and Silver Cutlery Set_35
+  - first:
+      213: 3486950701109235454
+    second: Cupcake, Cherry and Silver Cutlery Set_36
+  - first:
+      213: -2347580434649554960
+    second: Cupcake, Cherry and Silver Cutlery Set_37
+  - first:
+      213: 9123832599323052739
+    second: Cupcake, Cherry and Silver Cutlery Set_38
+  - first:
+      213: 2943398492977478304
+    second: Cupcake, Cherry and Silver Cutlery Set_39
+  - first:
+      213: 8539798783988705724
+    second: Cupcake, Cherry and Silver Cutlery Set_40
+  - first:
+      213: 1843806795761675195
+    second: Cupcake, Cherry and Silver Cutlery Set_41
+  - first:
+      213: -3946463223160398504
+    second: Cupcake, Cherry and Silver Cutlery Set_42
+  - first:
+      213: -6035829952612068703
+    second: Cupcake, Cherry and Silver Cutlery Set_43
+  - first:
+      213: -9085038773369721092
+    second: Cupcake, Cherry and Silver Cutlery Set_44
+  - first:
+      213: -4464009661492249189
+    second: Cupcake, Cherry and Silver Cutlery Set_45
+  - first:
+      213: -511164874532852131
+    second: Cupcake, Cherry and Silver Cutlery Set_46
+  - first:
+      213: 2311901732702255308
+    second: Cupcake, Cherry and Silver Cutlery Set_47
+  - first:
+      213: -4944608312729172762
+    second: Cupcake, Cherry and Silver Cutlery Set_48
+  - first:
+      213: -7337053469510730389
+    second: Cupcake, Cherry and Silver Cutlery Set_49
+  - first:
+      213: 1116795156528075062
+    second: Cupcake, Cherry and Silver Cutlery Set_50
+  - first:
+      213: -938943335116327874
+    second: Cupcake, Cherry and Silver Cutlery Set_51
+  - first:
+      213: 1609889168803097061
+    second: Cupcake, Cherry and Silver Cutlery Set_52
+  - first:
+      213: 7125662839330839218
+    second: Cupcake, Cherry and Silver Cutlery Set_53
+  - first:
+      213: 6488276403588951060
+    second: Cupcake, Cherry and Silver Cutlery Set_54
+  - first:
+      213: -7348217680074856547
+    second: Cupcake, Cherry and Silver Cutlery Set_55
+  - first:
+      213: -2223901254926552405
+    second: Cupcake, Cherry and Silver Cutlery Set_56
+  - first:
+      213: -7908537562429244914
+    second: Cupcake, Cherry and Silver Cutlery Set_57
+  - first:
+      213: 8097556413237828065
+    second: Cupcake, Cherry and Silver Cutlery Set_58
+  - first:
+      213: 6702752135243078194
+    second: Cupcake, Cherry and Silver Cutlery Set_59
+  - first:
+      213: -348443597010707597
+    second: Cupcake, Cherry and Silver Cutlery Set_60
+  - first:
+      213: -8009057125991151022
+    second: Cupcake, Cherry and Silver Cutlery Set_61
+  - first:
+      213: 2407118880417213080
+    second: Cupcake, Cherry and Silver Cutlery Set_62
+  - first:
+      213: -993164773612960195
+    second: Cupcake, Cherry and Silver Cutlery Set_63
+  - first:
+      213: 6236860323925285737
+    second: Cupcake, Cherry and Silver Cutlery Set_64
+  - first:
+      213: 2652561467285507643
+    second: Cupcake, Cherry and Silver Cutlery Set_65
+  - first:
+      213: 7200788001265154940
+    second: Cupcake, Cherry and Silver Cutlery Set_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_0
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 2
+        width: 208
+        height: 885
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2e2eeb54aff4520800000000000000
+      internalID: 2688642680025703114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_1
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 880
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee1ec653cd3ed370800000000000000
+      internalID: 8349178668375744236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_15
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 827
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2706c10da49e79140800000000000000
+      internalID: 4726502841476997234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_16
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 840
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084a12c971c87b380800000000000000
+      internalID: -8955535300971355008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_21
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 819
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652092ddcacfce340800000000000000
+      internalID: 4894564714419913302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_22
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 819
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 023ba82cbc622b0d0800000000000000
+      internalID: -3408619311381957856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_25
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 811
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29978914c724edc0800000000000000
+      internalID: -3610717278048904915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_28
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 751
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1a6b059d9bdec10800000000000000
+      internalID: 2084526545555595701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_37
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 644
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ff5e0f5808bb6fd0800000000000000
+      internalID: -2347580434649554960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_38
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 740
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca87c0b86d5e9e70800000000000000
+      internalID: 9123832599323052739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_42
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 620
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d91689b985b39c0800000000000000
+      internalID: -3946463223160398504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_43
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 628
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a215e523ac6c3ca0800000000000000
+      internalID: -6035829952612068703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_44
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 604
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfea5a6ce557be180800000000000000
+      internalID: -9085038773369721092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_47
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 587
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8f35d7066851020800000000000000
+      internalID: 2311901732702255308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 539
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4855eefe8316bb0800000000000000
+      internalID: -4944608312729172762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_49
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 471
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6df3cb2ebc8d2a90800000000000000
+      internalID: -7337053469510730389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_55
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 410
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d97a4e6d3f2e50a90800000000000000
+      internalID: -7348217680074856547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_58
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 152
+        width: 39
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e91ab7b7ac406070800000000000000
+      internalID: 8097556413237828065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_61
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 122
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a8c7b4afc1ad090800000000000000
+      internalID: -8009057125991151022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_62
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 117
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a67674eddc76120800000000000000
+      internalID: 2407118880417213080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_63
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 49
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d364e5186e19732f0800000000000000
+      internalID: -993164773612960195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_64
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 49
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b5b499b67cd8650800000000000000
+      internalID: 6236860323925285737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_65
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 54
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e0172c99acfc420800000000000000
+      internalID: 2652561467285507643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cupcake, Cherry and Silver Cutlery Set_66
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 0
+        width: 70
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7bfd4629865ee360800000000000000
+      internalID: 7200788001265154940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DtC and StT assets_0
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 112
+        width: 301
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b620d905edf4aa340a96d033f97a3160
+      internalID: -1898297346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DtC and StT assets_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 35
+        width: 583
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e25fb948b4ec54880653913583451f
+      internalID: 1261375782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DtC and StT assets_2
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 20
+        width: 225
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8528fdab8e836784eb72e26000a245f8
+      internalID: -2026527466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DtC and StT assets_3
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 16
+        width: 257
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c2a1869f1ed7346b260bf348e1a03e
+      internalID: 525477566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 92da21afee1a7714e8d8efc22a5a61f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cupcake, Cherry and Silver Cutlery Set_0: 2688642680025703114
+      Cupcake, Cherry and Silver Cutlery Set_1: 8349178668375744236
+      Cupcake, Cherry and Silver Cutlery Set_10: 2445414657871252634
+      Cupcake, Cherry and Silver Cutlery Set_11: 4359456667943973461
+      Cupcake, Cherry and Silver Cutlery Set_12: -1068377783154802390
+      Cupcake, Cherry and Silver Cutlery Set_13: 5904376316939184214
+      Cupcake, Cherry and Silver Cutlery Set_14: 7210221142477233535
+      Cupcake, Cherry and Silver Cutlery Set_15: 4726502841476997234
+      Cupcake, Cherry and Silver Cutlery Set_16: -8955535300971355008
+      Cupcake, Cherry and Silver Cutlery Set_17: -8749982670407840621
+      Cupcake, Cherry and Silver Cutlery Set_18: -661465976630831784
+      Cupcake, Cherry and Silver Cutlery Set_19: -718488614335141826
+      Cupcake, Cherry and Silver Cutlery Set_2: 4052035407709208304
+      Cupcake, Cherry and Silver Cutlery Set_20: 2328074806781417936
+      Cupcake, Cherry and Silver Cutlery Set_21: 4894564714419913302
+      Cupcake, Cherry and Silver Cutlery Set_22: -3408619311381957856
+      Cupcake, Cherry and Silver Cutlery Set_23: -8840947056384529641
+      Cupcake, Cherry and Silver Cutlery Set_24: -3949744006550844673
+      Cupcake, Cherry and Silver Cutlery Set_25: -3610717278048904915
+      Cupcake, Cherry and Silver Cutlery Set_26: -4661642357601942707
+      Cupcake, Cherry and Silver Cutlery Set_27: -7923414057636578837
+      Cupcake, Cherry and Silver Cutlery Set_28: 2084526545555595701
+      Cupcake, Cherry and Silver Cutlery Set_29: -1797949451544330224
+      Cupcake, Cherry and Silver Cutlery Set_3: 6548032743897822276
+      Cupcake, Cherry and Silver Cutlery Set_30: -3479761475342691913
+      Cupcake, Cherry and Silver Cutlery Set_31: -5980804852778085706
+      Cupcake, Cherry and Silver Cutlery Set_32: -8611510185393367444
+      Cupcake, Cherry and Silver Cutlery Set_33: -2967245198968356528
+      Cupcake, Cherry and Silver Cutlery Set_34: -7165145126619139129
+      Cupcake, Cherry and Silver Cutlery Set_35: 4205530106922533913
+      Cupcake, Cherry and Silver Cutlery Set_36: 3486950701109235454
+      Cupcake, Cherry and Silver Cutlery Set_37: -2347580434649554960
+      Cupcake, Cherry and Silver Cutlery Set_38: 9123832599323052739
+      Cupcake, Cherry and Silver Cutlery Set_39: 2943398492977478304
+      Cupcake, Cherry and Silver Cutlery Set_4: -1050951306542017900
+      Cupcake, Cherry and Silver Cutlery Set_40: 8539798783988705724
+      Cupcake, Cherry and Silver Cutlery Set_41: 1843806795761675195
+      Cupcake, Cherry and Silver Cutlery Set_42: -3946463223160398504
+      Cupcake, Cherry and Silver Cutlery Set_43: -6035829952612068703
+      Cupcake, Cherry and Silver Cutlery Set_44: -9085038773369721092
+      Cupcake, Cherry and Silver Cutlery Set_45: -4464009661492249189
+      Cupcake, Cherry and Silver Cutlery Set_46: -511164874532852131
+      Cupcake, Cherry and Silver Cutlery Set_47: 2311901732702255308
+      Cupcake, Cherry and Silver Cutlery Set_48: -4944608312729172762
+      Cupcake, Cherry and Silver Cutlery Set_49: -7337053469510730389
+      Cupcake, Cherry and Silver Cutlery Set_5: -6821359083508130135
+      Cupcake, Cherry and Silver Cutlery Set_50: 1116795156528075062
+      Cupcake, Cherry and Silver Cutlery Set_51: -938943335116327874
+      Cupcake, Cherry and Silver Cutlery Set_52: 1609889168803097061
+      Cupcake, Cherry and Silver Cutlery Set_53: 7125662839330839218
+      Cupcake, Cherry and Silver Cutlery Set_54: 6488276403588951060
+      Cupcake, Cherry and Silver Cutlery Set_55: -7348217680074856547
+      Cupcake, Cherry and Silver Cutlery Set_56: -2223901254926552405
+      Cupcake, Cherry and Silver Cutlery Set_57: -7908537562429244914
+      Cupcake, Cherry and Silver Cutlery Set_58: 8097556413237828065
+      Cupcake, Cherry and Silver Cutlery Set_59: 6702752135243078194
+      Cupcake, Cherry and Silver Cutlery Set_6: -7717745268043506447
+      Cupcake, Cherry and Silver Cutlery Set_60: -348443597010707597
+      Cupcake, Cherry and Silver Cutlery Set_61: -8009057125991151022
+      Cupcake, Cherry and Silver Cutlery Set_62: 2407118880417213080
+      Cupcake, Cherry and Silver Cutlery Set_63: -993164773612960195
+      Cupcake, Cherry and Silver Cutlery Set_64: 6236860323925285737
+      Cupcake, Cherry and Silver Cutlery Set_65: 2652561467285507643
+      Cupcake, Cherry and Silver Cutlery Set_66: 7200788001265154940
+      Cupcake, Cherry and Silver Cutlery Set_7: 6467445400963902125
+      Cupcake, Cherry and Silver Cutlery Set_8: -4859256404832886280
+      Cupcake, Cherry and Silver Cutlery Set_9: 1478073921639245570
+      DtC and StT assets_0: -1898297346
+      DtC and StT assets_1: 1261375782
+      DtC and StT assets_2: -2026527466
+      DtC and StT assets_3: 525477566
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
